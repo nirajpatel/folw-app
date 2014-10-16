@@ -21,6 +21,7 @@
 		D87C93F819F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
 		D87C940019F071D000208B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87C93FE19F071D000208B35 /* InfoPlist.strings */; };
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
+		D87C940F19F0734400208B35 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C940E19F0734400208B35 /* launch.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D87C93FD19F071D000208B35 /* folwTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "folwTests-Info.plist"; sourceTree = "<group>"; };
 		D87C93FF19F071D000208B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87C940119F071D000208B35 /* folwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwTests.m; sourceTree = "<group>"; };
+		D87C940E19F0734400208B35 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		D87C93CA19F071D000208B35 = {
 			isa = PBXGroup;
 			children = (
+				D87C940B19F0731F00208B35 /* images */,
 				D87C93DC19F071D000208B35 /* folw */,
 				D87C93FB19F071D000208B35 /* folwTests */,
 				D87C93D519F071D000208B35 /* Frameworks */,
@@ -150,6 +153,14 @@
 				D87C93FE19F071D000208B35 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D87C940B19F0731F00208B35 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D87C940E19F0734400208B35 /* launch.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87C940F19F0734400208B35 /* launch.jpg in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
@@ -376,7 +388,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "folw/folw-Prefix.pch";
 				INFOPLIST_FILE = "folw/folw-Info.plist";
@@ -389,7 +400,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "folw/folw-Prefix.pch";
 				INFOPLIST_FILE = "folw/folw-Info.plist";
