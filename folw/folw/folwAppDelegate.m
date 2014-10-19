@@ -7,11 +7,19 @@
 //
 
 #import "folwAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation folwAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Connect to Parse
+    [Parse setApplicationId:@"ni7yiO7Nhwjqb1ZUHxwmzFjHYR1phXTJwNju40So"
+                  clientKey:@"u0gL1TuTD65msVkcktHxbWUrXcPIfvVdRQKPfyMm"];
+    
+    // Parse statistics tracker
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     // Override point for customization after application launch.
     return YES;
 }
