@@ -39,12 +39,15 @@
 
 - (void)signUp {
     PFUser *user = [PFUser user];
-    user.username = self.nameField.text;
+    
+    // User name is email
+    user.username = self.emailField.text;
     user.password = self.passwordField.text;
     user.email = self.emailField.text;
     
     // other fields can be set just like with PFObject
-    //user[@"phone"] = @"415-392-0202";
+    user[@"firstName"] = self.firstNameField.text;
+    user[@"lastName"] = self.lastNameField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
