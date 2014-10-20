@@ -38,7 +38,7 @@
 }
 
 - (void)signIn {
-    [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text
+    [PFUser logInWithUsernameInBackground:self.userNameField.text password:self.passwordField.text
         block:^(PFUser *user, NSError *error) {
         if (user) {
             // Do stuff after successful login.

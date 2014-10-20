@@ -41,13 +41,12 @@
     PFUser *user = [PFUser user];
     
     // User name is email
-    user.username = self.emailField.text;
+    user.username = self.usernameField.text;
     user.password = self.passwordField.text;
     user.email = self.emailField.text;
     
     // other fields can be set just like with PFObject
-    user[@"firstName"] = self.firstNameField.text;
-    user[@"lastName"] = self.lastNameField.text;
+    user[@"fullName"] = self.fullNameField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
