@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB5FC35D19F43E9500329EDA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB5FC35C19F43E9500329EDA /* Default-568h@2x.png */; };
 		BB5FC36019F440EF00329EDA /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5FC35F19F440EF00329EDA /* SignInViewController.m */; };
 		BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5FC36219F4412B00329EDA /* SignUpViewController.m */; };
 		BB5FC36619F4417D00329EDA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC36419F4417D00329EDA /* Bolts.framework */; };
@@ -21,6 +20,10 @@
 		BB5FC37519F441E100329EDA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37419F441E100329EDA /* Security.framework */; };
 		BB5FC37719F441E900329EDA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37619F441E900329EDA /* StoreKit.framework */; };
 		BB5FC37919F441F300329EDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37819F441F300329EDA /* SystemConfiguration.framework */; };
+		D85F622319F573E40042322A /* load-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622219F573E40042322A /* load-2x.png */; };
+		D85F622519F574470042322A /* load-1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622419F574470042322A /* load-1x.png */; };
+		D85F622719F5777E0042322A /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622619F5777E0042322A /* main.png */; };
+		D85F622A19F584380042322A /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F622919F584380042322A /* loginViewController.m */; };
 		D87C93D719F071D000208B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D619F071D000208B35 /* Foundation.framework */; };
 		D87C93D919F071D000208B35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D819F071D000208B35 /* CoreGraphics.framework */; };
 		D87C93DB19F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
@@ -49,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB5FC35C19F43E9500329EDA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BB5FC35E19F440EF00329EDA /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		BB5FC35F19F440EF00329EDA /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		BB5FC36119F4412B00329EDA /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -65,6 +67,11 @@
 		BB5FC37419F441E100329EDA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BB5FC37619F441E900329EDA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BB5FC37819F441F300329EDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D85F622219F573E40042322A /* load-2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-2x.png"; sourceTree = "<group>"; };
+		D85F622419F574470042322A /* load-1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-1x.png"; sourceTree = "<group>"; };
+		D85F622619F5777E0042322A /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		D85F622819F584380042322A /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		D85F622919F584380042322A /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		D87C93D319F071D000208B35 /* folw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = folw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87C93D619F071D000208B35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D87C93D819F071D000208B35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,7 +134,6 @@
 			children = (
 				BB5FC36419F4417D00329EDA /* Bolts.framework */,
 				BB5FC36519F4417D00329EDA /* Parse.framework */,
-				BB5FC35C19F43E9500329EDA /* Default-568h@2x.png */,
 				D87C940B19F0731F00208B35 /* images */,
 				D87C93DC19F071D000208B35 /* folw */,
 				D87C93FB19F071D000208B35 /* folwTests */,
@@ -168,6 +174,8 @@
 		D87C93DC19F071D000208B35 /* folw */ = {
 			isa = PBXGroup;
 			children = (
+				D85F622819F584380042322A /* loginViewController.h */,
+				D85F622919F584380042322A /* loginViewController.m */,
 				D87C93E519F071D000208B35 /* folwAppDelegate.h */,
 				D87C93E619F071D000208B35 /* folwAppDelegate.m */,
 				D87C93E819F071D000208B35 /* Main.storyboard */,
@@ -215,6 +223,9 @@
 		D87C940B19F0731F00208B35 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D85F622619F5777E0042322A /* main.png */,
+				D85F622419F574470042322A /* load-1x.png */,
+				D85F622219F573E40042322A /* load-2x.png */,
 				D87C940E19F0734400208B35 /* launch.jpg */,
 			);
 			name = images;
@@ -298,10 +309,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87C940F19F0734400208B35 /* launch.jpg in Resources */,
+				D85F622719F5777E0042322A /* main.png in Resources */,
+				D85F622519F574470042322A /* load-1x.png in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
-				BB5FC35D19F43E9500329EDA /* Default-568h@2x.png in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
+				D85F622319F573E40042322A /* load-2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +337,7 @@
 				BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */,
 				D87C93E719F071D000208B35 /* folwAppDelegate.m in Sources */,
 				D87C93E319F071D000208B35 /* main.m in Sources */,
+				D85F622A19F584380042322A /* loginViewController.m in Sources */,
 				D87C93ED19F071D000208B35 /* folwViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
