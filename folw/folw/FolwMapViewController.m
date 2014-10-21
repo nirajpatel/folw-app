@@ -26,7 +26,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.userLocation.location.coordinate, MKCoordinateSpanMake(0.01, 0.01));
+    
+    [self.mapView setRegion:region];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+}
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation: (MKUserLocation *)userLocation
+{
+    self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
 - (void)didReceiveMemoryWarning

@@ -41,6 +41,8 @@
 		D87C940F19F0734400208B35 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C940E19F0734400208B35 /* launch.jpg */; };
 		D889031B19F5C7410079FC60 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D889031A19F5C7410079FC60 /* background.png */; };
 		D8A1E02B19F5C38100FDE089 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A1E02A19F5C38100FDE089 /* cancel.png */; };
+		FB20AADD19F5EE40002D9BA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB20AADC19F5EE40002D9BA3 /* MapKit.framework */; };
+		FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		D87C940E19F0734400208B35 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 		D889031A19F5C7410079FC60 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../Desktop/background.png; sourceTree = "<group>"; };
 		D8A1E02A19F5C38100FDE089 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = ../../../../Desktop/cancel.png; sourceTree = "<group>"; };
+		FB20AADC19F5EE40002D9BA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolwMapViewController.h; sourceTree = "<group>"; };
+		FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolwMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +108,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5FC36D19F441BF00329EDA /* CoreLocation.framework in Frameworks */,
+				FB20AADD19F5EE40002D9BA3 /* MapKit.framework in Frameworks */,
 				BB5FC37919F441F300329EDA /* SystemConfiguration.framework in Frameworks */,
 				BB5FC37719F441E900329EDA /* StoreKit.framework in Frameworks */,
 				BB5FC37519F441E100329EDA /* Security.framework in Frameworks */,
 				BB5FC37319F441D900329EDA /* QuartzCore.framework in Frameworks */,
 				BB5FC37119F441D100329EDA /* MobileCoreServices.framework in Frameworks */,
 				BB5FC36F19F441C900329EDA /* libz.dylib in Frameworks */,
-				BB5FC36D19F441BF00329EDA /* CoreLocation.framework in Frameworks */,
 				BB5FC36B19F441B200329EDA /* CFNetwork.framework in Frameworks */,
 				BB5FC36919F441A900329EDA /* AudioToolbox.framework in Frameworks */,
 				D87C93D919F071D000208B35 /* CoreGraphics.framework in Frameworks */,
@@ -158,6 +164,7 @@
 		D87C93D519F071D000208B35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB20AADC19F5EE40002D9BA3 /* MapKit.framework */,
 				BB5FC37819F441F300329EDA /* SystemConfiguration.framework */,
 				BB5FC37619F441E900329EDA /* StoreKit.framework */,
 				BB5FC37419F441E100329EDA /* Security.framework */,
@@ -191,6 +198,8 @@
 				D87C93EC19F071D000208B35 /* FolwViewController.m */,
 				D87C93EE19F071D000208B35 /* Images.xcassets */,
 				D87C93DD19F071D000208B35 /* Supporting Files */,
+				FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */,
+				FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */,
 			);
 			path = folw;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB5FC36019F440EF00329EDA /* SignInViewController.m in Sources */,
+				FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */,
 				BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */,
 				D87C93E719F071D000208B35 /* FolwAppDelegate.m in Sources */,
 				D87C93E319F071D000208B35 /* main.m in Sources */,
