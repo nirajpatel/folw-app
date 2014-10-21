@@ -36,6 +36,19 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     
+    //KERNING
+    NSMutableAttributedString *usernameAttributedString = [[NSMutableAttributedString alloc] initWithString:@"USERNAME"];
+    [usernameAttributedString addAttribute:NSKernAttributeName
+                             value:@(2.2)
+                             range:NSMakeRange(0, 8)];
+    _userNameField.attributedText = usernameAttributedString;
+    
+    NSMutableAttributedString *passwordAttributedString = [[NSMutableAttributedString alloc] initWithString:@"PASSWORD"];
+    [passwordAttributedString addAttribute:NSKernAttributeName
+                                     value:@(2.2)
+                                     range:NSMakeRange(0, 8)];
+    _passwordField.attributedText = passwordAttributedString;
+    
     _background.image = [self blurWithCoreImage:_background.image];
 }
 
