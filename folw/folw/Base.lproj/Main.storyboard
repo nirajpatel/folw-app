@@ -96,6 +96,7 @@
                             <color key="tintColor" red="0.18823531270027161" green="0.18823531270027161" blue="0.18823531270027161" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="goBack" destination="QB4-BM-8EJ" id="naW-PR-dYI"/>
+                                <segue destination="Osf-Ox-ijD" kind="push" id="PxA-QC-BWv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -193,7 +194,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vy5-jy-Phq"/>
+                    <toolbarItems>
+                        <barButtonItem image="left.png" id="5ZE-Pd-gkL">
+                            <color key="tintColor" red="0.18823531269999999" green="0.18823531269999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="QB4-BM-8EJ" id="kNv-4y-wdz"/>
+                                <segue destination="mYk-tQ-8ba" kind="push" id="yAF-X6-AxC"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Vy5-jy-Phq">
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="5ZE-Pd-gkL" id="5Yo-yQ-eWZ"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="background" destination="pRc-Uh-IqF" id="0Ug-a6-SEp"/>
                         <outlet property="emailField" destination="jHc-De-aZZ" id="rvk-Wg-Yi2"/>
@@ -259,6 +274,7 @@
     <resources>
         <image name="background.png" width="640" height="1136"/>
         <image name="cancel.png" width="16" height="16"/>
+        <image name="left.png" width="9" height="16"/>
         <image name="main.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -268,5 +284,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="bsT-nh-Vfs"/>
+        <segue reference="PxA-QC-BWv"/>
     </inferredMetricsTieBreakers>
 </document>

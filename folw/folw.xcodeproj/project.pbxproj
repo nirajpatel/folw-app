@@ -40,6 +40,7 @@
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
 		D87C940F19F0734400208B35 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C940E19F0734400208B35 /* launch.jpg */; };
 		D889031B19F5C7410079FC60 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D889031A19F5C7410079FC60 /* background.png */; };
+		D89C40A819F6BBAF004838CB /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D89C40A719F6BBAF004838CB /* left.png */; };
 		D8A1E02B19F5C38100FDE089 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A1E02A19F5C38100FDE089 /* cancel.png */; };
 		FB20AADD19F5EE40002D9BA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB20AADC19F5EE40002D9BA3 /* MapKit.framework */; };
 		FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */; };
@@ -97,6 +98,7 @@
 		D87C940119F071D000208B35 /* folwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwTests.m; sourceTree = "<group>"; };
 		D87C940E19F0734400208B35 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 		D889031A19F5C7410079FC60 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../Desktop/background.png; sourceTree = "<group>"; };
+		D89C40A719F6BBAF004838CB /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = ../../../../Desktop/left.png; sourceTree = "<group>"; };
 		D8A1E02A19F5C38100FDE089 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = ../../../../Desktop/cancel.png; sourceTree = "<group>"; };
 		FB20AADC19F5EE40002D9BA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolwMapViewController.h; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				D85F622619F5777E0042322A /* main.png */,
 				D889031A19F5C7410079FC60 /* background.png */,
 				D8A1E02A19F5C38100FDE089 /* cancel.png */,
+				D89C40A719F6BBAF004838CB /* left.png */,
 				D85F622419F574470042322A /* load-1x.png */,
 				D85F622219F573E40042322A /* load-2x.png */,
 				D87C940E19F0734400208B35 /* launch.jpg */,
@@ -329,6 +332,7 @@
 				D8A1E02B19F5C38100FDE089 /* cancel.png in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
+				D89C40A819F6BBAF004838CB /* left.png in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
 				D889031B19F5C7410079FC60 /* background.png in Resources */,
 				D85F622319F573E40042322A /* load-2x.png in Resources */,
