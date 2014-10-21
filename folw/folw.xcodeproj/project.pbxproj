@@ -196,10 +196,10 @@
 				BB5FC35F19F440EF00329EDA /* SignInViewController.m */,
 				D87C93EB19F071D000208B35 /* FolwViewController.h */,
 				D87C93EC19F071D000208B35 /* FolwViewController.m */,
-				D87C93EE19F071D000208B35 /* Images.xcassets */,
-				D87C93DD19F071D000208B35 /* Supporting Files */,
 				FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */,
 				FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */,
+				D87C93EE19F071D000208B35 /* Images.xcassets */,
+				D87C93DD19F071D000208B35 /* Supporting Files */,
 			);
 			path = folw;
 			sourceTree = "<group>";

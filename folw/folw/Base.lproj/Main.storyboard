@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w1x-hR-TMk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w1x-hR-TMk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -104,16 +104,17 @@
                         <outlet property="messageLabel" destination="C3j-ow-ShK" id="AWy-QS-YAY"/>
                         <outlet property="passwordField" destination="yEl-n1-dD4" id="ZzT-FF-8Bx"/>
                         <outlet property="userNameField" destination="qjX-So-hwZ" id="1Kt-Jb-KQh"/>
+                        <segue destination="eLf-R5-WEu" kind="push" identifier="loadMain" id="WK2-Js-6x3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QB4-BM-8EJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1094" y="14"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up View Controller - signUpComplete-->
         <scene sceneID="QUf-Y4-nJS">
             <objects>
-                <viewController id="XaE-oL-hca" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController title="signUpComplete" id="XaE-oL-hca" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfn-OS-1va"/>
                         <viewControllerLayoutGuide type="bottom" id="njV-p9-HIJ"/>
@@ -226,13 +227,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jZn-M2-1o0"/>
                     <connections>
                         <outlet property="mapView" destination="iME-WC-aC9" id="NrC-Xl-TXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qp0-T3-OaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="23"/>
+            <point key="canvasLocation" x="1094" y="745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="weE-oe-CsH">
@@ -251,23 +253,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN9-Ic-hXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101" y="14"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ND9-5Z-8Gx">
-            <objects>
-                <viewController id="lga-e8-nEw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XUb-U3-rR6"/>
-                        <viewControllerLayoutGuide type="bottom" id="npZ-L5-3Ca"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xXc-1r-frd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qQO-lN-kHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

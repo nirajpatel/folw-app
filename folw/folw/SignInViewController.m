@@ -72,7 +72,8 @@
         block:^(PFUser *user, NSError *error) {
         if (user) {
             // Do stuff after successful login.
-            self.messageLabel.text = @"Successful Login";
+            //self.messageLabel.text = @"Successful Login";
+            [self performSegueWithIdentifier:@"loadMain" sender:self];
         } else {
            // The login failed. Check error to see why.
             NSString *errorString = [error userInfo][@"error"];

@@ -58,7 +58,7 @@
         if (!error) {
             // Hooray! Let them use the app now.
             self.messageLabel.text = @"Successful Sign Up";
-            
+            [self performSegueWithIdentifier:@"signUpComplete" sender:self];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
