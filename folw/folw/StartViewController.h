@@ -1,5 +1,5 @@
 //
-//  loginViewController.h
+//  StartViewController.h
 //  folw
 //
 //  Created by Niraj Patel on 10/20/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface loginViewController : UIViewController
+@interface StartViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 

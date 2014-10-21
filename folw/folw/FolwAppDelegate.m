@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 CS378. All rights reserved.
 //
 
-#import "folwAppDelegate.h"
+#import "FolwAppDelegate.h"
 #import <Parse/Parse.h>
 
-@implementation folwAppDelegate
+@implementation FolwAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 CS378. All rights reserved.
 //
 
-#import "folwViewController.h"
+#import "FolwViewController.h"
 #import <Parse/Parse.h>
 
-@interface folwViewController ()
+@interface FolwViewController ()
 
 @end
 
-@implementation folwViewController
+@implementation FolwViewController
 
 - (void)viewDidLoad
 {

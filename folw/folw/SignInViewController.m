@@ -27,14 +27,44 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+
     // Do any additional setup after loading the view.
-    [self.signInButton addTarget:self action:@selector(signIn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.signInButton];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    _background.image = [self blurWithCoreImage:_background.image];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIButton *)signInButton {
+    _signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _signInButton.frame = CGRectMake(110, 340, 100, 36);
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"LOGIN"];
+    [attributedString addAttribute:NSKernAttributeName
+                             value:@(2.2)
+                             range:NSMakeRange(0, 5)];
+    [_signInButton setAttributedTitle:attributedString forState:UIControlStateNormal];
+    
+    _signInButton.titleLabel.font = [UIFont fontWithName:@"Avenir Next" size:13.f];
+    _signInButton.titleLabel.textColor = [UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1];
+    
+    _signInButton.layer.borderColor = [UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1].CGColor;
+    _signInButton.layer.borderWidth = 1.0f;
+    _signInButton.layer.cornerRadius = 2.0f;
+    
+    [_signInButton addTarget:self action:@selector(signIn) forControlEvents:UIControlEventTouchUpInside];
+    
+    return _signInButton;
 }
 
 - (void)signIn {
@@ -49,6 +79,49 @@
             self.messageLabel.text = errorString;
         }
     }];
+}
+
+- (UIImage *)blurWithCoreImage:(UIImage *)sourceImage
+{
+    CIImage *inputImage = [CIImage imageWithCGImage:sourceImage.CGImage];
+    
+    // Apply Affine-Clamp filter to stretch the image so that it does not
+    // look shrunken when gaussian blur is applied
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CIFilter *clampFilter = [CIFilter filterWithName:@"CIAffineClamp"];
+    [clampFilter setValue:inputImage forKey:@"inputImage"];
+    [clampFilter setValue:[NSValue valueWithBytes:&transform objCType:@encode(CGAffineTransform)] forKey:@"inputTransform"];
+    
+    // Apply gaussian blur filter with radius of 30
+    CIFilter *gaussianBlurFilter = [CIFilter filterWithName: @"CIGaussianBlur"];
+    [gaussianBlurFilter setValue:clampFilter.outputImage forKey: @"inputImage"];
+    [gaussianBlurFilter setValue:@10 forKey:@"inputRadius"];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:gaussianBlurFilter.outputImage fromRect:[inputImage extent]];
+    
+    // Set up output context.
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    CGContextRef outputContext = UIGraphicsGetCurrentContext();
+    
+    // Invert image coordinates
+    CGContextScaleCTM(outputContext, 1.0, -1.0);
+    CGContextTranslateCTM(outputContext, 0, -self.view.frame.size.height);
+    
+    // Draw base image.
+    CGContextDrawImage(outputContext, self.view.frame, cgImage);
+    
+    // Apply white tint
+    CGContextSaveGState(outputContext);
+    CGContextSetFillColorWithColor(outputContext, [UIColor colorWithWhite:1 alpha:0.2].CGColor);
+    CGContextFillRect(outputContext, self.view.frame);
+    CGContextRestoreGState(outputContext);
+    
+    // Output image is ready.
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
 }
 
 

@@ -23,15 +23,15 @@
 		D85F622319F573E40042322A /* load-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622219F573E40042322A /* load-2x.png */; };
 		D85F622519F574470042322A /* load-1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622419F574470042322A /* load-1x.png */; };
 		D85F622719F5777E0042322A /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D85F622619F5777E0042322A /* main.png */; };
-		D85F622A19F584380042322A /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F622919F584380042322A /* loginViewController.m */; };
+		D85F622A19F584380042322A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F622919F584380042322A /* StartViewController.m */; };
 		D87C93D719F071D000208B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D619F071D000208B35 /* Foundation.framework */; };
 		D87C93D919F071D000208B35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D819F071D000208B35 /* CoreGraphics.framework */; };
 		D87C93DB19F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
 		D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87C93DF19F071D000208B35 /* InfoPlist.strings */; };
 		D87C93E319F071D000208B35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C93E219F071D000208B35 /* main.m */; };
-		D87C93E719F071D000208B35 /* folwAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C93E619F071D000208B35 /* folwAppDelegate.m */; };
+		D87C93E719F071D000208B35 /* FolwAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C93E619F071D000208B35 /* FolwAppDelegate.m */; };
 		D87C93EA19F071D000208B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87C93E819F071D000208B35 /* Main.storyboard */; };
-		D87C93ED19F071D000208B35 /* folwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C93EC19F071D000208B35 /* folwViewController.m */; };
+		D87C93ED19F071D000208B35 /* FolwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C93EC19F071D000208B35 /* FolwViewController.m */; };
 		D87C93EF19F071D000208B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87C93EE19F071D000208B35 /* Images.xcassets */; };
 		D87C93F619F071D000208B35 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93F519F071D000208B35 /* XCTest.framework */; };
 		D87C93F719F071D000208B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D619F071D000208B35 /* Foundation.framework */; };
@@ -39,6 +39,8 @@
 		D87C940019F071D000208B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87C93FE19F071D000208B35 /* InfoPlist.strings */; };
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
 		D87C940F19F0734400208B35 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C940E19F0734400208B35 /* launch.jpg */; };
+		D889031B19F5C7410079FC60 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D889031A19F5C7410079FC60 /* background.png */; };
+		D8A1E02B19F5C38100FDE089 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A1E02A19F5C38100FDE089 /* cancel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +72,8 @@
 		D85F622219F573E40042322A /* load-2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-2x.png"; sourceTree = "<group>"; };
 		D85F622419F574470042322A /* load-1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-1x.png"; sourceTree = "<group>"; };
 		D85F622619F5777E0042322A /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
-		D85F622819F584380042322A /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
-		D85F622919F584380042322A /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		D85F622819F584380042322A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		D85F622919F584380042322A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		D87C93D319F071D000208B35 /* folw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = folw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87C93D619F071D000208B35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D87C93D819F071D000208B35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,11 +82,11 @@
 		D87C93E019F071D000208B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87C93E219F071D000208B35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D87C93E419F071D000208B35 /* folw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "folw-Prefix.pch"; sourceTree = "<group>"; };
-		D87C93E519F071D000208B35 /* folwAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = folwAppDelegate.h; sourceTree = "<group>"; };
-		D87C93E619F071D000208B35 /* folwAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwAppDelegate.m; sourceTree = "<group>"; };
+		D87C93E519F071D000208B35 /* FolwAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FolwAppDelegate.h; sourceTree = "<group>"; };
+		D87C93E619F071D000208B35 /* FolwAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FolwAppDelegate.m; sourceTree = "<group>"; };
 		D87C93E919F071D000208B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D87C93EB19F071D000208B35 /* folwViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = folwViewController.h; sourceTree = "<group>"; };
-		D87C93EC19F071D000208B35 /* folwViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwViewController.m; sourceTree = "<group>"; };
+		D87C93EB19F071D000208B35 /* FolwViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FolwViewController.h; sourceTree = "<group>"; };
+		D87C93EC19F071D000208B35 /* FolwViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FolwViewController.m; sourceTree = "<group>"; };
 		D87C93EE19F071D000208B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D87C93F419F071D000208B35 /* folwTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = folwTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87C93F519F071D000208B35 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,6 +94,8 @@
 		D87C93FF19F071D000208B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87C940119F071D000208B35 /* folwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwTests.m; sourceTree = "<group>"; };
 		D87C940E19F0734400208B35 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
+		D889031A19F5C7410079FC60 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../Desktop/background.png; sourceTree = "<group>"; };
+		D8A1E02A19F5C38100FDE089 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = ../../../../Desktop/cancel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,17 +178,17 @@
 		D87C93DC19F071D000208B35 /* folw */ = {
 			isa = PBXGroup;
 			children = (
-				D85F622819F584380042322A /* loginViewController.h */,
-				D85F622919F584380042322A /* loginViewController.m */,
-				D87C93E519F071D000208B35 /* folwAppDelegate.h */,
-				D87C93E619F071D000208B35 /* folwAppDelegate.m */,
+				D85F622819F584380042322A /* StartViewController.h */,
+				D85F622919F584380042322A /* StartViewController.m */,
+				D87C93E519F071D000208B35 /* FolwAppDelegate.h */,
+				D87C93E619F071D000208B35 /* FolwAppDelegate.m */,
 				D87C93E819F071D000208B35 /* Main.storyboard */,
 				BB5FC36119F4412B00329EDA /* SignUpViewController.h */,
 				BB5FC36219F4412B00329EDA /* SignUpViewController.m */,
 				BB5FC35E19F440EF00329EDA /* SignInViewController.h */,
 				BB5FC35F19F440EF00329EDA /* SignInViewController.m */,
-				D87C93EB19F071D000208B35 /* folwViewController.h */,
-				D87C93EC19F071D000208B35 /* folwViewController.m */,
+				D87C93EB19F071D000208B35 /* FolwViewController.h */,
+				D87C93EC19F071D000208B35 /* FolwViewController.m */,
 				D87C93EE19F071D000208B35 /* Images.xcassets */,
 				D87C93DD19F071D000208B35 /* Supporting Files */,
 			);
@@ -224,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				D85F622619F5777E0042322A /* main.png */,
+				D889031A19F5C7410079FC60 /* background.png */,
+				D8A1E02A19F5C38100FDE089 /* cancel.png */,
 				D85F622419F574470042322A /* load-1x.png */,
 				D85F622219F573E40042322A /* load-2x.png */,
 				D87C940E19F0734400208B35 /* launch.jpg */,
@@ -311,9 +317,11 @@
 				D87C940F19F0734400208B35 /* launch.jpg in Resources */,
 				D85F622719F5777E0042322A /* main.png in Resources */,
 				D85F622519F574470042322A /* load-1x.png in Resources */,
+				D8A1E02B19F5C38100FDE089 /* cancel.png in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
+				D889031B19F5C7410079FC60 /* background.png in Resources */,
 				D85F622319F573E40042322A /* load-2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,10 +343,10 @@
 			files = (
 				BB5FC36019F440EF00329EDA /* SignInViewController.m in Sources */,
 				BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */,
-				D87C93E719F071D000208B35 /* folwAppDelegate.m in Sources */,
+				D87C93E719F071D000208B35 /* FolwAppDelegate.m in Sources */,
 				D87C93E319F071D000208B35 /* main.m in Sources */,
-				D85F622A19F584380042322A /* loginViewController.m in Sources */,
-				D87C93ED19F071D000208B35 /* folwViewController.m in Sources */,
+				D85F622A19F584380042322A /* StartViewController.m in Sources */,
+				D87C93ED19F071D000208B35 /* FolwViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
