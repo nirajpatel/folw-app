@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1094" y="14"/>
         </scene>
-        <!--Sign Up View Controller - signUpComplete-->
+        <!--Sign Up View Controller-->
         <scene sceneID="QUf-Y4-nJS">
             <objects>
-                <viewController title="signUpComplete" id="XaE-oL-hca" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="XaE-oL-hca" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfn-OS-1va"/>
                         <viewControllerLayoutGuide type="bottom" id="njV-p9-HIJ"/>
@@ -202,6 +202,7 @@
                         <outlet property="passwordField" destination="3hd-eZ-ydc" id="wG8-55-wYZ"/>
                         <outlet property="signUpButton" destination="IrQ-RP-aXR" id="bru-9I-iVW"/>
                         <outlet property="usernameField" destination="LPU-nW-ZII" id="uOT-rW-Rca"/>
+                        <segue destination="mYk-tQ-8ba" kind="push" identifier="signUpComplete" id="bsT-nh-Vfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Waa-0i-mBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,4 +266,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="bsT-nh-Vfs"/>
+    </inferredMetricsTieBreakers>
 </document>
