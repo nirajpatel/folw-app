@@ -59,6 +59,12 @@
                                   range:NSMakeRange(0, 7)];
     _passwordField.attributedText = passwordAttributedString;
     
+    NSMutableAttributedString *labelAttributedString = [[NSMutableAttributedString alloc] initWithString:@"SIGN UP"];
+    [labelAttributedString addAttribute:NSKernAttributeName
+                                  value:@(2.2)
+                                  range:NSMakeRange(0, 7)];
+    _signUpLabel.attributedText = labelAttributedString;
+    
     _background.image = [self blurWithCoreImage:_background.image];
 }
 

@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *background;
+@property (weak, nonatomic) IBOutlet UILabel *signUpLabel;
 
 @end
