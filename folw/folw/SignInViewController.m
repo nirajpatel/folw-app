@@ -56,12 +56,23 @@
     _signInLabel.attributedText = labelAttributedString;
     
     _background.image = [self blurWithCoreImage:_background.image];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dismissKeyboard {
+    [_userNameField resignFirstResponder];
+    [_passwordField resignFirstResponder];
 }
 
 - (UIButton *)signInButton {
