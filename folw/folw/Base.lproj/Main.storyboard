@@ -133,14 +133,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrQ-RP-aXR">
-                                <rect key="frame" x="90" y="385" width="140" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EMAIL" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHc-De-aZZ">
                                 <rect key="frame" x="66" y="270" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -199,7 +191,6 @@
                         <outlet property="fullNameField" destination="mAe-nr-u6w" id="rx9-gO-kgf"/>
                         <outlet property="messageLabel" destination="S7Y-sQ-Sq0" id="WwM-sq-eaq"/>
                         <outlet property="passwordField" destination="3hd-eZ-ydc" id="wG8-55-wYZ"/>
-                        <outlet property="signUpButton" destination="IrQ-RP-aXR" id="bru-9I-iVW"/>
                         <outlet property="signUpLabel" destination="5yU-xD-vTx" id="seN-hQ-sUl"/>
                         <outlet property="usernameField" destination="LPU-nW-ZII" id="uOT-rW-Rca"/>
                         <segue destination="mYk-tQ-8ba" kind="push" identifier="signUpComplete" id="bsT-nh-Vfs"/>

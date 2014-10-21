@@ -28,11 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.signUpButton addTarget:self action:@selector(signUp) forControlEvents:UIControlEventTouchUpInside];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
+    
+    [self.view addSubview:self.signUpButton];
     
     //KERNING
     NSMutableAttributedString *fullNameAttributedString = [[NSMutableAttributedString alloc] initWithString:@"FULL NAME"];
@@ -96,6 +97,28 @@
             self.messageLabel.text = errorString;
         }
     }];
+}
+
+- (UIButton *)signUpButton {
+    _signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _signUpButton.frame = CGRectMake(110, 400, 100, 36);
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"SUBMIT"];
+    [attributedString addAttribute:NSKernAttributeName
+                             value:@(2.2)
+                             range:NSMakeRange(0, 5)];
+    [_signUpButton setAttributedTitle:attributedString forState:UIControlStateNormal];
+    
+    _signUpButton.titleLabel.font = [UIFont fontWithName:@"Avenir Next" size:13.f];
+    _signUpButton.titleLabel.textColor = [UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1];
+    
+    _signUpButton.layer.borderColor = [UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1].CGColor;
+    _signUpButton.layer.borderWidth = 1.0f;
+    _signUpButton.layer.cornerRadius = 2.0f;
+    
+    [_signUpButton addTarget:self action:@selector(signUp) forControlEvents:UIControlEventTouchUpInside];
+    
+    return _signUpButton;
 }
 
 - (UIImage *)blurWithCoreImage:(UIImage *)sourceImage
