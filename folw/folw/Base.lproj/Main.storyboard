@@ -122,6 +122,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pRc-Uh-IqF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrQ-RP-aXR">
                                 <rect key="frame" x="90" y="345" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -190,6 +194,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vy5-jy-Phq"/>
                     <connections>
+                        <outlet property="background" destination="pRc-Uh-IqF" id="0Ug-a6-SEp"/>
                         <outlet property="emailField" destination="jHc-De-aZZ" id="rvk-Wg-Yi2"/>
                         <outlet property="fullNameField" destination="mAe-nr-u6w" id="rx9-gO-kgf"/>
                         <outlet property="messageLabel" destination="S7Y-sQ-Sq0" id="WwM-sq-eaq"/>
