@@ -100,10 +100,25 @@
 - (void)signIn {
     [PFUser logInWithUsernameInBackground:self.userNameField.text password:self.passwordField.text
         block:^(PFUser *user, NSError *error) {
-        if (user) {
-            // Do stuff after successful login.
-            //self.messageLabel.text = @"Successful Login";
-            [self performSegueWithIdentifier:@"loadMain" sender:self];
+            if (user) {
+                // Successful login.
+                
+                // Check if user current trip is still valid
+                NSString *tripId = user[@"currentTrip"];
+            
+                PFQuery *query = [PFQuery queryWithClassName:@"Trip"];
+                [query getObjectInBackgroundWithId:tripId block:^(PFObject *trip, NSError *error) {
+                    BOOL tripExpired = [trip[@"expired"] boolValue];
+                    // if yes, direct user to map view
+                    if(tripExpired) {
+                        [self performSegueWithIdentifier:@"createTrip" sender:self];
+                    }
+                    else {
+                        // if no, take them to create trip view
+                        [self performSegueWithIdentifier:@"createTrip" sender:self];
+                    }
+                }];
+                
         } else {
            // The login failed. Check error to see why.
             NSString *errorString = [error userInfo][@"error"];
