@@ -100,24 +100,28 @@
 - (void)signIn {
     [PFUser logInWithUsernameInBackground:self.userNameField.text password:self.passwordField.text
         block:^(PFUser *user, NSError *error) {
-            if (user) {
-                // Successful login.
+        if (user) {
+            // Successful login.
                 
-                // Check if user current trip is still valid
-                NSString *tripId = user[@"currentTrip"];
+            // Check if user current trip is still valid
+            NSString *tripId = user[@"currentTrip"];
             
-                PFQuery *query = [PFQuery queryWithClassName:@"Trip"];
-                [query getObjectInBackgroundWithId:tripId block:^(PFObject *trip, NSError *error) {
-                    BOOL tripExpired = [trip[@"expired"] boolValue];
-                    // if yes, direct user to map view
-                    if(tripExpired) {
-                        [self performSegueWithIdentifier:@"createTrip" sender:self];
-                    }
-                    else {
-                        // if no, take them to create trip view
-                        [self performSegueWithIdentifier:@"createTrip" sender:self];
-                    }
-                }];
+            PFQuery *query = [PFQuery queryWithClassName:@"Trip"];
+            [query getObjectInBackgroundWithId:tripId block:^(PFObject *trip, NSError *error) {
+                BOOL tripExpired = [trip[@"expired"] boolValue];
+                if(trip == nil) {
+                    // if no trip, take them to create trip view
+                    [self performSegueWithIdentifier:@"createTrip" sender:self];
+                }
+                // if NO, direct user to map view
+                else if(!tripExpired) {
+                    [self performSegueWithIdentifier:@"loadMain" sender:self];
+                }
+                else {
+                    // if expired, take them to create trip view
+                    [self performSegueWithIdentifier:@"createTrip" sender:self];
+                }
+            }];
                 
         } else {
            // The login failed. Check error to see why.
