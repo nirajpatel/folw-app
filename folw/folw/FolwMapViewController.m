@@ -72,45 +72,25 @@
         
         self.mapView.delegate = self;
         self.mapView.showsUserLocation = YES;
-        MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.userLocation.location.coordinate, MKCoordinateSpanMake(leaderPoint.latitude, leaderPoint.longitude));
-        region.span = MKCoordinateSpanMake(0.5, 0.597129);
-        [self.mapView setRegion:region];
-        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+        
+        CLLocationCoordinate2D zoomLocation;
+        zoomLocation.latitude = leaderPoint.latitude; // your latitude value
+        zoomLocation.longitude= leaderPoint.longitude; // your longitude value
+        
+        MKCoordinateRegion region;
+        MKCoordinateSpan span;
+        span.latitudeDelta=0.18; // change as per your zoom level
+        span.longitudeDelta=0.18;
+        region.span=span;
+        region.center= zoomLocation;
+        
+        [self.mapView setRegion:region animated:YES];
+        [self.mapView regionThatFits:region];
+
 
     }];
     
-
-    
-//    for(NSString *user in users) {
-//        NSLog(@"%@", user);
-//        PFQuery *userQuery = [PFQuery queryWithClassName:@"User"];
-//        [userQuery whereKey:@"objectId" equalTo:user];
-//        NSArray *coArray = [userQuery findObjects];
-//        PFGeoPoint *coordinates = coArray[0];
-//        NSLog(@"%f", coordinates.latitude);
-//        
-//        //user pin goes here
-//        NSNumber *latNumber = [NSNumber numberWithDouble:coordinates.latitude];
-//        NSLog(@"%@", latNumber);
-//        NSString *latitudeString = [latNumber stringValue];
-//        NSAssert(latitudeString, @"No latitude");
-//        NSNumber *longNumber = [NSNumber numberWithDouble:coordinates.longitude];
-//        NSLog(@"%@", longNumber);
-//        
-//        NSString *longitudeString = [longNumber stringValue];
-//        NSAssert(longitudeString, @"No longitude");
-//        
-//        // create the annotation and add it to the map
-//        
-//        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-//        annotation.coordinate = CLLocationCoordinate2DMake([latitudeString doubleValue], [longitudeString doubleValue]);
-//        annotation.title = @"driver2";
-//        annotation.subtitle = @"driver2";
-//        [self.mapView addAnnotation:annotation];
-//    }
-
 }
-
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation: (MKUserLocation *)userLocation
 {
