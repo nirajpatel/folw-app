@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSArray *users;
 @property (strong, nonatomic) NSString *tripId;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *endTrip;
+
 @end

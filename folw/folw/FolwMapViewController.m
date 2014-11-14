@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.navigationItem.hidesBackButton = YES;
 
     self.users = [[NSArray alloc] init];
     
@@ -67,12 +68,13 @@
                 coordinate.latitude = point.latitude;
                 coordinate.longitude = point.longitude;
                 CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"0" coordinate:coordinate] ;
-                [_mapView addAnnotation:annotation];                
+                [_mapView addAnnotation:annotation];
             }];
         }
         
         self.mapView.delegate = self;
         self.mapView.showsUserLocation = YES;
+        self.mapView.showsPointsOfInterest = NO;
         
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = leaderPoint.latitude; // your latitude value
@@ -88,9 +90,22 @@
         [self.mapView setRegion:region animated:YES];
         [self.mapView regionThatFits:region];
 
-
     }];
     
+    _endTrip.target = self;
+    _endTrip.action = @selector( endTrip: );
+    
+}
+
+-(void) endTrip:(id)sender {
+    PFQuery *tripQuery = [PFQuery queryWithClassName:@"Trip"];
+    [tripQuery whereKey:@"objectId" equalTo:_tripId];
+    [tripQuery getFirstObjectInBackgroundWithBlock:^(PFObject *trip, NSError *error) {
+        [trip setObject:@YES forKey:@"expired"];
+        [trip saveInBackground];
+    }];
+    
+    [self performSegueWithIdentifier:@"newTrip" sender:self];
 }
 
 -(void)setTripId:(NSString *)tripId
