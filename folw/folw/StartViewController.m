@@ -42,7 +42,7 @@
 
 - (UIButton *)loginButton {
     _loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _loginButton.frame = CGRectMake(110, 440, 100, 36);
+    _loginButton.frame = CGRectMake(110, 420, 100, 36);
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"LOGIN"];
     [attributedString addAttribute:NSKernAttributeName
