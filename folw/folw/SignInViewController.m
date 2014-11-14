@@ -112,13 +112,15 @@
             PFQuery *query = [PFQuery queryWithClassName:@"Trip"];
             [query getObjectInBackgroundWithId:tripId block:^(PFObject *trip, NSError *error) {
                 BOOL tripExpired = [trip[@"expired"] boolValue];
+
                 if(trip == nil) {
                     // if no trip, take them to create trip view
                     [self performSegueWithIdentifier:@"createTrip" sender:self];
                 }
                 // if NO, direct user to map view
                 else if(!tripExpired) {
-                    //[self performSegueWithIdentifier:@"loadMain" sender:self];
+                    self.tripId = tripId;
+                    [self performSegueWithIdentifier:@"loadMain" sender:self];
                 }
                 else {
                     // if expired, take them to create trip view
@@ -138,6 +140,8 @@
 {
     if ([segue.identifier isEqualToString:@"createTrip"]) {
         [segue.destinationViewController setUserId:self.userId];
+    } else if ([segue.identifier isEqualToString:@"loadMain"]) {
+        [segue.destinationViewController setTripId:self.tripId];
     }
 }
 

@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *signInLabel;
 
 @property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *tripId;
 
 @end

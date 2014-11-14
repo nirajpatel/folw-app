@@ -91,6 +91,7 @@
             [query getObjectInBackgroundWithId:userId block:^(PFObject *user, NSError *error) {
                 // Do something with the returned PFObject in the gameScore variable.
                 user[@"currentTrip"] = trip.objectId;
+                [user save];
             }];
         }
         
