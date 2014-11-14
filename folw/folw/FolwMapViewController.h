@@ -12,5 +12,6 @@
 @interface FolwMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSArray *users;
 
 @end

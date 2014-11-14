@@ -41,6 +41,7 @@
 		D87C93F819F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
 		D87C940019F071D000208B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87C93FE19F071D000208B35 /* InfoPlist.strings */; };
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
+		D8BF369C1A156475003CB149 /* createTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF369B1A156475003CB149 /* createTripViewController.m */; };
 		D8C92BC819F718EF00D54E98 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8C92BC719F718EF00D54E98 /* cancel.png */; };
 		FB20AADD19F5EE40002D9BA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB20AADC19F5EE40002D9BA3 /* MapKit.framework */; };
 		FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */; };
@@ -99,6 +100,8 @@
 		D87C93FD19F071D000208B35 /* folwTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "folwTests-Info.plist"; sourceTree = "<group>"; };
 		D87C93FF19F071D000208B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87C940119F071D000208B35 /* folwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwTests.m; sourceTree = "<group>"; };
+		D8BF369A1A156475003CB149 /* createTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createTripViewController.h; sourceTree = "<group>"; };
+		D8BF369B1A156475003CB149 /* createTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createTripViewController.m; sourceTree = "<group>"; };
 		D8C92BC719F718EF00D54E98 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = images/cancel.png; sourceTree = "<group>"; };
 		FB20AADC19F5EE40002D9BA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolwMapViewController.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 		D87C93DC19F071D000208B35 /* folw */ = {
 			isa = PBXGroup;
 			children = (
+				D8BF369A1A156475003CB149 /* createTripViewController.h */,
+				D8BF369B1A156475003CB149 /* createTripViewController.m */,
 				D85F622819F584380042322A /* StartViewController.h */,
 				D85F622919F584380042322A /* StartViewController.m */,
 				D87C93E519F071D000208B35 /* FolwAppDelegate.h */,
@@ -361,6 +366,7 @@
 				D87C93E319F071D000208B35 /* main.m in Sources */,
 				D85F622A19F584380042322A /* StartViewController.m in Sources */,
 				D87C93ED19F071D000208B35 /* FolwViewController.m in Sources */,
+				D8BF369C1A156475003CB149 /* createTripViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
