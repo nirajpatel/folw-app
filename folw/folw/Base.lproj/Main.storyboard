@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w1x-hR-TMk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w1x-hR-TMk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -301,12 +301,10 @@
                     <navigationItem key="navigationItem" id="pFo-P1-XuN"/>
                     <connections>
                         <outlet property="addUser" destination="fyb-DM-7zP" id="ByL-7B-nqB"/>
-                        <outlet property="addUsers" destination="fyb-DM-7zP" id="813-hR-wxl"/>
                         <outlet property="createTrip" destination="Tcn-Vc-pyk" id="pdb-w5-eF7"/>
                         <outlet property="message" destination="wWF-yH-WUe" id="Cqq-st-OVs"/>
                         <outlet property="tripName" destination="czJ-ED-fzP" id="1Tr-i9-fo2"/>
                         <outlet property="userToAdd" destination="zCj-Mh-7bj" id="B05-is-iA2"/>
-                        <outlet property="usersToAdd" destination="zCj-Mh-7bj" id="UmV-YP-LWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4m-an-Tdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
