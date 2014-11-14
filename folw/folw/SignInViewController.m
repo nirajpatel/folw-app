@@ -57,6 +57,8 @@
     
     _background.image = [self blurWithCoreImage:_background.image];
     
+    self.userId = [[NSString alloc] init];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -102,7 +104,8 @@
         block:^(PFUser *user, NSError *error) {
         if (user) {
             // Successful login.
-                
+            self.userId = user.objectId;
+            
             // Check if user current trip is still valid
             NSString *tripId = user[@"currentTrip"];
             
@@ -129,6 +132,13 @@
             self.messageLabel.text = errorString;
         }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"createTrip"]) {
+        [segue.destinationViewController setUserId:self.userId];
+    }
 }
 
 - (UIImage *)blurWithCoreImage:(UIImage *)sourceImage

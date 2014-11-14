@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UILabel *signInLabel;
 
+@property (strong, nonatomic) NSString *userId;
+
 @end

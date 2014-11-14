@@ -34,7 +34,7 @@
     PFGeoPoint *leaderPoint;
     
     PFQuery *tripQuery = [PFQuery queryWithClassName:@"Trip"];
-    [tripQuery whereKey:@"objectId" equalTo:@"Q6GhUgjbEH"];
+    [tripQuery whereKey:@"objectId" equalTo:_tripId];
     [tripQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         self.users = [object objectForKey:@"users"];
         
@@ -90,6 +90,11 @@
 
     }];
     
+}
+
+-(void)setTripId:(NSString *)tripId
+{
+    _tripId = tripId;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation: (MKUserLocation *)userLocation

@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSString *tripId;
 
 @end

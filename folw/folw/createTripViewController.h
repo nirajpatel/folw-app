@@ -18,7 +18,9 @@
 @property (nonatomic, strong) NSMutableArray *userList;
 @property (weak, nonatomic) IBOutlet UILabel *message;
 
-- (void)addUsers;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *tripId;
 
+- (void)addUsers;
 
 @end

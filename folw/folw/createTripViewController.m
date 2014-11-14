@@ -7,6 +7,7 @@
 //
 
 #import "createTripViewController.h"
+#import "FolwMapViewController.h"
 #import <Parse/Parse.h>
 
 @interface createTripViewController ()
@@ -32,6 +33,9 @@
     [self.createTrip addTarget:self action:@selector(makeTrip) forControlEvents:UIControlEventTouchUpInside];
     
     self.userList = [[NSMutableArray alloc] init];
+    self.tripId = [[NSString alloc] init];
+    
+    [self.userList addObject:self.userId];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -79,8 +83,7 @@
         trip[@"expired"] = @NO;
         [trip save];
         
-        NSLog(@"Object id %@",[trip objectId]);
-
+        self.tripId = [trip objectId];
         
         // Take trip id and add to each user
         for (NSString *userId in self.userList) {
@@ -91,8 +94,8 @@
             }];
         }
         
-        //NSLog(@"%@", trip.objectId);
-        
+        FolwMapViewController *folwMapViewController = [[FolwMapViewController alloc] init];
+        folwMapViewController.tripId = [trip objectId];
         // Take them to map view
         [self performSegueWithIdentifier:@"loadMain" sender:self];
         
@@ -100,6 +103,19 @@
         self.message.text = @"enter a trip name";
     }
     
+}
+
+-(void)setUserId:(NSString *)userId
+{
+    _userId = userId;
+    NSLog(@"id: %@", _userId);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"loadMain"]) {
+        [segue.destinationViewController setTripId:self.tripId];
+    }
 }
 
 /*
