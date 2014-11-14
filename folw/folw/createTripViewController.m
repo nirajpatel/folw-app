@@ -35,8 +35,6 @@
     self.userList = [[NSMutableArray alloc] init];
     self.tripId = [[NSString alloc] init];
     
-    [self.userList addObject:self.userId];
-    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];

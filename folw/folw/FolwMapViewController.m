@@ -8,6 +8,7 @@
 
 #import "FolwMapViewController.h"
 #import <Parse/Parse.h>
+#import "CustomLocation.h"
 
 @interface FolwMapViewController ()
 
@@ -45,6 +46,7 @@
             [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
                 PFGeoPoint *point = object[@"currentLocation"];
                 
+                //TO DO
                 if(i == 0) {
                     __block PFGeoPoint *leaderPoint = point;
                 }
@@ -61,12 +63,11 @@
                 NSString *longitudeString = [longNumber stringValue];
                 NSAssert(longitudeString, @"No longitude");
 
-                // create the annotation and add it to the map
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-                annotation.coordinate = CLLocationCoordinate2DMake([latitudeString doubleValue], [longitudeString doubleValue]);
-                annotation.title = name;
-                [self.mapView addAnnotation:annotation];
-                
+                CLLocationCoordinate2D coordinate;
+                coordinate.latitude = point.latitude;
+                coordinate.longitude = point.longitude;
+                CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"0" coordinate:coordinate] ;
+                [_mapView addAnnotation:annotation];                
             }];
         }
         
@@ -95,6 +96,26 @@
 -(void)setTripId:(NSString *)tripId
 {
     _tripId = tripId;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    static NSString *identifier = @"CustomLocation";
+    if ([annotation isKindOfClass:[CustomLocation class]]) {
+        
+        MKAnnotationView *annotationView = (MKAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if (annotationView == nil) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+            annotationView.image = [UIImage imageNamed:@"car.png"];
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        return annotationView;
+    }
+    
+    return nil;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation: (MKUserLocation *)userLocation

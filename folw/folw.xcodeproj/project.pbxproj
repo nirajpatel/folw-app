@@ -20,6 +20,8 @@
 		BB5FC37519F441E100329EDA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37419F441E100329EDA /* Security.framework */; };
 		BB5FC37719F441E900329EDA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37619F441E900329EDA /* StoreKit.framework */; };
 		BB5FC37919F441F300329EDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FC37819F441F300329EDA /* SystemConfiguration.framework */; };
+		D8347C5E1A16B04B001EB8A1 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = D8347C5D1A16B04B001EB8A1 /* car.png */; };
+		D8347C611A16B3FA001EB8A1 /* CustomLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347C601A16B3FA001EB8A1 /* CustomLocation.m */; };
 		D8429A6719F717CC00DF9113 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6019F717CC00DF9113 /* background.png */; };
 		D8429A6919F717CC00DF9113 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6219F717CC00DF9113 /* left.png */; };
 		D8429A6A19F717CC00DF9113 /* load-1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6319F717CC00DF9113 /* load-1x.png */; };
@@ -73,6 +75,9 @@
 		BB5FC37419F441E100329EDA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BB5FC37619F441E900329EDA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BB5FC37819F441F300329EDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D8347C5D1A16B04B001EB8A1 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car.png; path = images/car.png; sourceTree = "<group>"; };
+		D8347C5F1A16B3FA001EB8A1 /* CustomLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLocation.h; sourceTree = "<group>"; };
+		D8347C601A16B3FA001EB8A1 /* CustomLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLocation.m; sourceTree = "<group>"; };
 		D8429A6019F717CC00DF9113 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = images/background.png; sourceTree = "<group>"; };
 		D8429A6219F717CC00DF9113 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = images/left.png; sourceTree = "<group>"; };
 		D8429A6319F717CC00DF9113 /* load-1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "load-1x.png"; path = "images/load-1x.png"; sourceTree = "<group>"; };
@@ -197,6 +202,8 @@
 				D87C93E519F071D000208B35 /* FolwAppDelegate.h */,
 				D87C93E619F071D000208B35 /* FolwAppDelegate.m */,
 				D87C93E819F071D000208B35 /* Main.storyboard */,
+				D8347C5F1A16B3FA001EB8A1 /* CustomLocation.h */,
+				D8347C601A16B3FA001EB8A1 /* CustomLocation.m */,
 				BB5FC36119F4412B00329EDA /* SignUpViewController.h */,
 				BB5FC36219F4412B00329EDA /* SignUpViewController.m */,
 				BB5FC35E19F440EF00329EDA /* SignInViewController.h */,
@@ -247,6 +254,7 @@
 				D8429A6019F717CC00DF9113 /* background.png */,
 				D8429A6219F717CC00DF9113 /* left.png */,
 				D8429A6319F717CC00DF9113 /* load-1x.png */,
+				D8347C5D1A16B04B001EB8A1 /* car.png */,
 				D8429A6419F717CC00DF9113 /* load-2x.png */,
 				D8429A6519F717CC00DF9113 /* main.png */,
 				D8429A6619F717CC00DF9113 /* menu.png */,
@@ -339,6 +347,7 @@
 				D8429A6919F717CC00DF9113 /* left.png in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
 				D8429A6D19F717CC00DF9113 /* menu.png in Resources */,
+				D8347C5E1A16B04B001EB8A1 /* car.png in Resources */,
 				D8429A6B19F717CC00DF9113 /* load-2x.png in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +372,7 @@
 				FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */,
 				BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */,
 				D87C93E719F071D000208B35 /* FolwAppDelegate.m in Sources */,
+				D8347C611A16B3FA001EB8A1 /* CustomLocation.m in Sources */,
 				D87C93E319F071D000208B35 /* main.m in Sources */,
 				D85F622A19F584380042322A /* StartViewController.m in Sources */,
 				D87C93ED19F071D000208B35 /* FolwViewController.m in Sources */,
