@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "folw/FolwMapViewController.m"
-            timestampString = "437614402.176875"
+            timestampString = "437617945.113979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "folw/FolwMapViewController.m"
-            timestampString = "437615090.765122"
+            timestampString = "437617945.113979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

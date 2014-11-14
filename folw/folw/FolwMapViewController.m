@@ -29,14 +29,9 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 
-    self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
-    MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.userLocation.location.coordinate, MKCoordinateSpanMake(0.01, 0.01));
-    
-    [self.mapView setRegion:region];
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
-
     self.users = [[NSArray alloc] init];
+    
+    PFGeoPoint *leaderPoint;
     
     PFQuery *tripQuery = [PFQuery queryWithClassName:@"Trip"];
     [tripQuery whereKey:@"objectId" equalTo:@"Q6GhUgjbEH"];
@@ -44,16 +39,43 @@
         self.users = [object objectForKey:@"users"];
         
         for(int i = 0; i < sizeof(self.users); i++) {
-            NSString *userId = self.users[i];
-            PFQuery *userQuery = [PFQuery queryWithClassName:@"User"];
-            [userQuery whereKey:@"objectId" equalTo:userId];
-
+            PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
+            [userQuery whereKey:@"objectId" equalTo:self.users[i]];
             
             [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-                PFGeoPoint *coordinates = [object objectForKey:@"currentLocation"];
-                NSLog(@"%f", coordinates.latitude);
+                PFGeoPoint *point = object[@"currentLocation"];
+                
+                if(i == 0) {
+                    __block PFGeoPoint *leaderPoint = point;
+                }
+                
+                NSString *name = object[@"fullName"];
+                
+                NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
+                NSLog(@"%@", latNumber);
+                NSString *latitudeString = [latNumber stringValue];
+                NSAssert(latitudeString, @"No latitude");
+                NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
+                NSLog(@"%@", longNumber);
+                
+                NSString *longitudeString = [longNumber stringValue];
+                NSAssert(longitudeString, @"No longitude");
+
+                // create the annotation and add it to the map
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                annotation.coordinate = CLLocationCoordinate2DMake([latitudeString doubleValue], [longitudeString doubleValue]);
+                annotation.title = name;
+                [self.mapView addAnnotation:annotation];
+                
             }];
         }
+        
+        self.mapView.delegate = self;
+        self.mapView.showsUserLocation = YES;
+        MKCoordinateRegion region = MKCoordinateRegionMake(self.mapView.userLocation.location.coordinate, MKCoordinateSpanMake(leaderPoint.latitude, leaderPoint.longitude));
+        region.span = MKCoordinateSpanMake(0.5, 0.597129);
+        [self.mapView setRegion:region];
+        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 
     }];
     
