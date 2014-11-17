@@ -97,9 +97,6 @@
             }];
         }
         
-//        FolwMapViewController *folwMapViewController = [[FolwMapViewController alloc] init];
-//        folwMapViewController.userId = self.userId;
-//        folwMapViewController.tripId = [trip objectId];
         // Take them to map view
         [self performSegueWithIdentifier:@"loadMain" sender:self];
         
@@ -122,16 +119,5 @@
         [segue.destinationViewController setUserId:self.userId];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
