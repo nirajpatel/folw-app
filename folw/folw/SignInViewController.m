@@ -8,6 +8,8 @@
 
 #import "SignInViewController.h"
 #import <Parse/Parse.h>
+#import "createTripViewController.h"
+#import "FolwMapViewController.h"
 
 @interface SignInViewController ()
 
@@ -120,6 +122,7 @@
                 // if NO, direct user to map view
                 else if(!tripExpired) {
                     self.tripId = tripId;
+
                     [self performSegueWithIdentifier:@"loadMain" sender:self];
                 }
                 else {
@@ -142,6 +145,7 @@
         [segue.destinationViewController setUserId:self.userId];
     } else if ([segue.identifier isEqualToString:@"loadMain"]) {
         [segue.destinationViewController setTripId:self.tripId];
+        [segue.destinationViewController setUserId:self.userId];
     }
 }
 

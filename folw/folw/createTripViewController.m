@@ -35,6 +35,8 @@
     self.userList = [[NSMutableArray alloc] init];
     self.tripId = [[NSString alloc] init];
     
+    [self.userList addObject:self.userId];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -62,7 +64,9 @@
             // The find succeeded.
             // Do something with the found objects
             // Should only be one object (one user)
-            [self.userList addObject:object.objectId];
+            if (![self.userList containsObject:object.objectId]) {
+                [self.userList addObject:object.objectId];
+            }
         } else {
             // Log details of the failure
             self.message.text = @"username not found";
@@ -93,8 +97,9 @@
             }];
         }
         
-        FolwMapViewController *folwMapViewController = [[FolwMapViewController alloc] init];
-        folwMapViewController.tripId = [trip objectId];
+//        FolwMapViewController *folwMapViewController = [[FolwMapViewController alloc] init];
+//        folwMapViewController.userId = self.userId;
+//        folwMapViewController.tripId = [trip objectId];
         // Take them to map view
         [self performSegueWithIdentifier:@"loadMain" sender:self];
         
@@ -114,6 +119,7 @@
 {
     if ([segue.identifier isEqualToString:@"loadMain"]) {
         [segue.destinationViewController setTripId:self.tripId];
+        [segue.destinationViewController setUserId:self.userId];
     }
 }
 

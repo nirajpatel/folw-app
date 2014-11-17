@@ -9,6 +9,7 @@
 #import "FolwMapViewController.h"
 #import <Parse/Parse.h>
 #import "CustomLocation.h"
+#import "createTripViewController.h"
 
 @interface FolwMapViewController ()
 
@@ -105,12 +106,29 @@
         [trip saveInBackground];
     }];
     
+    createTripViewController *createTripController = [[createTripViewController alloc] init];
+    createTripController.userId = self.userId;
+    
+    NSLog(@"user id %@", self.userId);
+    
     [self performSegueWithIdentifier:@"newTrip" sender:self];
+}
+
+-(void)setUserId:(NSString *)userId
+{
+    _userId = userId;
 }
 
 -(void)setTripId:(NSString *)tripId
 {
     _tripId = tripId;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"newTrip"]) {
+        [segue.destinationViewController setUserId:self.userId];
+    }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
