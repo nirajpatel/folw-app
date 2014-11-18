@@ -29,9 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Add user button
     [_addUser addTarget:self action:@selector(addUsers) forControlEvents:UIControlEventTouchUpInside];
+    // Make trip button
     [_createTrip addTarget:self action:@selector(makeTrip) forControlEvents:UIControlEventTouchUpInside];
     
+    // Initialize user list
     _userList = [[NSMutableArray alloc] init];
     _tripId = [[NSString alloc] init];
     
@@ -62,13 +66,12 @@
         if (!error) {
             NSLog(@"HERE");
             // The find succeeded.
-            // Do something with the found objects
             // Should only be one object (one user)
             if (![self.userList containsObject:object.objectId]) {
                 [self.userList addObject:object.objectId];
             }
         } else {
-            // Log details of the failure
+            // Show details on the message label
             self.message.text = @"username not found";
         }
     }];
