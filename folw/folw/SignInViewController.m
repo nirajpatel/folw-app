@@ -32,7 +32,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 
     // Do any additional setup after loading the view.
-    [self.view addSubview:_signInButton];
+    [self.view addSubview:self.signInButton];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
