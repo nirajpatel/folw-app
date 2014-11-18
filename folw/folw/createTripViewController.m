@@ -29,13 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.addUser addTarget:self action:@selector(addUsers) forControlEvents:UIControlEventTouchUpInside];
-    [self.createTrip addTarget:self action:@selector(makeTrip) forControlEvents:UIControlEventTouchUpInside];
+    [_addUser addTarget:self action:@selector(addUsers) forControlEvents:UIControlEventTouchUpInside];
+    [_createTrip addTarget:self action:@selector(makeTrip) forControlEvents:UIControlEventTouchUpInside];
     
-    self.userList = [[NSMutableArray alloc] init];
-    self.tripId = [[NSString alloc] init];
+    _userList = [[NSMutableArray alloc] init];
+    _tripId = [[NSString alloc] init];
     
-    [self.userList addObject:self.userId];
+    [_userList addObject:_userId];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self

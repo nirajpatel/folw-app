@@ -12,12 +12,12 @@
 - (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate {
     if ((self = [super init])) {
         if ([name isKindOfClass:[NSString class]]) {
-            self.name = name;
+            _name = name;
         } else {
-            self.name = @"Unknown charge";
+            _name = @"Unknown charge";
         }
-        self.distance = distance;
-        self.theCoordinate = coordinate;
+        _distance = distance;
+        _theCoordinate = coordinate;
     }
     return self;
 }

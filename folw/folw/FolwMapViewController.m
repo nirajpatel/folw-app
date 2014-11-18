@@ -73,9 +73,9 @@
             }];
         }
         
-        self.mapView.delegate = self;
-        self.mapView.showsUserLocation = YES;
-        self.mapView.showsPointsOfInterest = NO;
+        _mapView.delegate = self;
+        _mapView.showsUserLocation = YES;
+        _mapView.showsPointsOfInterest = NO;
         
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = leaderPoint.latitude; // your latitude value
@@ -153,7 +153,7 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation: (MKUserLocation *)userLocation
 {
-    self.mapView.centerCoordinate = userLocation.location.coordinate;
+    _mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
 - (void)didReceiveMemoryWarning

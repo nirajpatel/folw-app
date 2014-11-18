@@ -32,7 +32,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.signInButton];
+    [self.view addSubview:_signInButton];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -59,7 +59,7 @@
     
     _background.image = [self blurWithCoreImage:_background.image];
     
-    self.userId = [[NSString alloc] init];
+    _userId = [[NSString alloc] init];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -106,7 +106,7 @@
         block:^(PFUser *user, NSError *error) {
         if (user) {
             // Successful login.
-            self.userId = user.objectId;
+            _userId = user.objectId;
             
             // Check if user current trip is still valid
             NSString *tripId = user[@"currentTrip"];
@@ -121,7 +121,7 @@
                 }
                 // if NO, direct user to map view
                 else if(!tripExpired) {
-                    self.tripId = tripId;
+                    _tripId = tripId;
 
                     [self performSegueWithIdentifier:@"loadMain" sender:self];
                 }
@@ -134,7 +134,7 @@
         } else {
            // The login failed. Check error to see why.
             NSString *errorString = [error userInfo][@"error"];
-            self.messageLabel.text = errorString;
+            _messageLabel.text = errorString;
         }
     }];
 }
@@ -142,10 +142,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"createTrip"]) {
-        [segue.destinationViewController setUserId:self.userId];
+        [segue.destinationViewController setUserId:_userId];
     } else if ([segue.identifier isEqualToString:@"loadMain"]) {
-        [segue.destinationViewController setTripId:self.tripId];
-        [segue.destinationViewController setUserId:self.userId];
+        [segue.destinationViewController setTripId:_tripId];
+        [segue.destinationViewController setUserId:_userId];
     }
 }
 

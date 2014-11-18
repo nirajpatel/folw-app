@@ -33,7 +33,7 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     
-    [self.view addSubview:self.signUpButton];
+    [self.view addSubview:_signUpButton];
     
     //KERNING
     NSMutableAttributedString *fullNameAttributedString = [[NSMutableAttributedString alloc] initWithString:@"FULL NAME"];
@@ -93,22 +93,22 @@
     PFUser *user = [PFUser user];
     
     // User name is email
-    user.username = self.usernameField.text;
-    user.password = self.passwordField.text;
-    user.email = self.emailField.text;
+    user.username = _usernameField.text;
+    user.password = _passwordField.text;
+    user.email = _emailField.text;
     
     // other fields can be set just like with PFObject
-    user[@"fullName"] = self.fullNameField.text;
+    user[@"fullName"] = _fullNameField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
-            self.messageLabel.text = @"Successful Sign Up";
+            _messageLabel.text = @"Successful Sign Up";
             [self performSegueWithIdentifier:@"signUpComplete" sender:self];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
-            self.messageLabel.text = errorString;
+            _messageLabel.text = errorString;
         }
     }];
 }
