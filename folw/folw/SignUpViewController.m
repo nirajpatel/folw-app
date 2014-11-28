@@ -33,7 +33,7 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     
-    [self.view addSubview:_signUpButton];
+    [self.view addSubview:self.signUpButton];
     
     //KERNING
     NSMutableAttributedString *fullNameAttributedString = [[NSMutableAttributedString alloc] initWithString:@"FULL NAME"];
