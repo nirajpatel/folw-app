@@ -107,6 +107,7 @@
         if (user) {
             // Successful login.
             _userId = user.objectId;
+            NSLog(@"user id %@", _userId);
             
             // Check if user current trip is still valid
             NSString *tripId = user[@"currentTrip"];

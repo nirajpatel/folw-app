@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "CustomLocation.h"
 #import "createTripViewController.h"
+#import "LocationTracker.h"
 
 @interface FolwMapViewController ()
 
@@ -96,6 +97,52 @@
     _endTrip.target = self;
     _endTrip.action = @selector( endTrip: );
     
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
+}
+
+-(void) callAfterSixtySecond:(NSTimer*) t
+{
+    [_mapView removeAnnotations:_mapView.annotations];
+    
+    PFGeoPoint *leaderPoint;
+    
+    PFQuery *tripQuery = [PFQuery queryWithClassName:@"Trip"];
+    [tripQuery whereKey:@"objectId" equalTo:_tripId];
+    [tripQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        self.users = [object objectForKey:@"users"];
+        
+        for(int i = 0; i < sizeof(self.users); i++) {
+            PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
+            [userQuery whereKey:@"objectId" equalTo:self.users[i]];
+            
+            [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                PFGeoPoint *point = object[@"currentLocation"];
+                
+                //TO DO
+                if(i == 0) {
+                    __block PFGeoPoint *leaderPoint = point;
+                }
+                
+                NSString *name = object[@"fullName"];
+                
+                NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
+                NSLog(@"%@", latNumber);
+                NSString *latitudeString = [latNumber stringValue];
+                NSAssert(latitudeString, @"No latitude");
+                NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
+                NSLog(@"%@", longNumber);
+                
+                NSString *longitudeString = [longNumber stringValue];
+                NSAssert(longitudeString, @"No longitude");
+                
+                CLLocationCoordinate2D coordinate;
+                coordinate.latitude = point.latitude;
+                coordinate.longitude = point.longitude;
+                CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"0" coordinate:coordinate] ;
+                [_mapView addAnnotation:annotation];
+            }];
+        }
+    }];
 }
 
 -(void) endTrip:(id)sender {

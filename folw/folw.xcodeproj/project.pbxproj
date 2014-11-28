@@ -45,6 +45,9 @@
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
 		D8BF369C1A156475003CB149 /* createTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF369B1A156475003CB149 /* createTripViewController.m */; };
 		D8C92BC819F718EF00D54E98 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8C92BC719F718EF00D54E98 /* cancel.png */; };
+		D8DFB9E81A27FDB600ED461E /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB9E71A27FDB600ED461E /* LocationTracker.m */; };
+		D8DFB9EB1A27FEB700ED461E /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB9EA1A27FEB700ED461E /* LocationShareModel.m */; };
+		D8DFB9EE1A27FEF500ED461E /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB9ED1A27FEF500ED461E /* BackgroundTaskManager.m */; };
 		FB20AADD19F5EE40002D9BA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB20AADC19F5EE40002D9BA3 /* MapKit.framework */; };
 		FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */; };
 /* End PBXBuildFile section */
@@ -108,6 +111,12 @@
 		D8BF369A1A156475003CB149 /* createTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createTripViewController.h; sourceTree = "<group>"; };
 		D8BF369B1A156475003CB149 /* createTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createTripViewController.m; sourceTree = "<group>"; };
 		D8C92BC719F718EF00D54E98 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = images/cancel.png; sourceTree = "<group>"; };
+		D8DFB9E61A27FDB600ED461E /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
+		D8DFB9E71A27FDB600ED461E /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
+		D8DFB9E91A27FEB700ED461E /* LocationShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationShareModel.h; sourceTree = "<group>"; };
+		D8DFB9EA1A27FEB700ED461E /* LocationShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareModel.m; sourceTree = "<group>"; };
+		D8DFB9EC1A27FEF500ED461E /* BackgroundTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundTaskManager.h; sourceTree = "<group>"; };
+		D8DFB9ED1A27FEF500ED461E /* BackgroundTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskManager.m; sourceTree = "<group>"; };
 		FB20AADC19F5EE40002D9BA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FB20AAE119F5EE99002D9BA3 /* FolwMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolwMapViewController.h; sourceTree = "<group>"; };
 		FB20AAE219F5EE99002D9BA3 /* FolwMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolwMapViewController.m; sourceTree = "<group>"; };
@@ -201,6 +210,12 @@
 				D85F622919F584380042322A /* StartViewController.m */,
 				D87C93E519F071D000208B35 /* FolwAppDelegate.h */,
 				D87C93E619F071D000208B35 /* FolwAppDelegate.m */,
+				D8DFB9E61A27FDB600ED461E /* LocationTracker.h */,
+				D8DFB9E71A27FDB600ED461E /* LocationTracker.m */,
+				D8DFB9E91A27FEB700ED461E /* LocationShareModel.h */,
+				D8DFB9EA1A27FEB700ED461E /* LocationShareModel.m */,
+				D8DFB9EC1A27FEF500ED461E /* BackgroundTaskManager.h */,
+				D8DFB9ED1A27FEF500ED461E /* BackgroundTaskManager.m */,
 				D87C93E819F071D000208B35 /* Main.storyboard */,
 				D8347C5F1A16B3FA001EB8A1 /* CustomLocation.h */,
 				D8347C601A16B3FA001EB8A1 /* CustomLocation.m */,
@@ -310,6 +325,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = CS378;
 				TargetAttributes = {
+					D87C93D219F071D000208B35 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					D87C93F319F071D000208B35 = {
 						TestTargetID = D87C93D219F071D000208B35;
 					};
@@ -371,6 +393,9 @@
 				BB5FC36019F440EF00329EDA /* SignInViewController.m in Sources */,
 				FB20AAE319F5EE99002D9BA3 /* FolwMapViewController.m in Sources */,
 				BB5FC36319F4412B00329EDA /* SignUpViewController.m in Sources */,
+				D8DFB9E81A27FDB600ED461E /* LocationTracker.m in Sources */,
+				D8DFB9EE1A27FEF500ED461E /* BackgroundTaskManager.m in Sources */,
+				D8DFB9EB1A27FEB700ED461E /* LocationShareModel.m in Sources */,
 				D87C93E719F071D000208B35 /* FolwAppDelegate.m in Sources */,
 				D8347C611A16B3FA001EB8A1 /* CustomLocation.m in Sources */,
 				D87C93E319F071D000208B35 /* main.m in Sources */,

@@ -24,6 +24,11 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchImages</key>
 	<array>
 		<dict>
@@ -67,5 +72,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is needed for this app.</string>
 </dict>
 </plist>

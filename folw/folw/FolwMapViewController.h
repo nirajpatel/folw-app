@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+#define kSomethingHappened @"SomethingHappened"
+
 @interface FolwMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;

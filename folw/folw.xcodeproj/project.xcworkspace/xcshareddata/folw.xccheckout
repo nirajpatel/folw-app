@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EA93955E-3756-4C2D-8DB5-84D69E883018</string>
+	<string>D43460F8-C58C-4C72-8158-0C1236205C76</string>
 	<key>IDESourceControlProjectName</key>
 	<string>folw</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>38D9C82F-FF5F-4B13-9BBD-46FFE0527F26</key>
-		<string>https://github.com/nirajpatel/folw-app</string>
+		<key>8802F1E1-8834-422D-94F8-A0CD8FE602BC</key>
+		<string>https://github.com/nirajpatel/folw-app.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>folw/folw.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>38D9C82F-FF5F-4B13-9BBD-46FFE0527F26</key>
+		<key>8802F1E1-8834-422D-94F8-A0CD8FE602BC</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nirajpatel/folw-app</string>
+	<string>https://github.com/nirajpatel/folw-app.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>38D9C82F-FF5F-4B13-9BBD-46FFE0527F26</string>
+	<string>8802F1E1-8834-422D-94F8-A0CD8FE602BC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>38D9C82F-FF5F-4B13-9BBD-46FFE0527F26</string>
+			<string>8802F1E1-8834-422D-94F8-A0CD8FE602BC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>folw-app</string>
 		</dict>
