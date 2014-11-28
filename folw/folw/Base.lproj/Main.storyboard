@@ -304,7 +304,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pFo-P1-XuN"/>
+                    <toolbarItems>
+                        <barButtonItem image="cancel.png" id="pst-sC-J0T">
+                            <color key="tintColor" red="0.18823531269999999" green="0.18823531269999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <segue destination="Osf-Ox-ijD" kind="push" id="nDo-ha-rZs"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="OvO-3K-WxO">
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="pst-sC-J0T" id="ZGp-A0-fYr"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addUser" destination="fyb-DM-7zP" id="ByL-7B-nqB"/>
                         <outlet property="createTrip" destination="Tcn-Vc-pyk" id="pdb-w5-eF7"/>
@@ -366,9 +379,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PxA-QC-BWv"/>
         <segue reference="bsT-nh-Vfs"/>
-        <segue reference="WK2-Js-6x3"/>
         <segue reference="oWI-eD-UJq"/>
+        <segue reference="6lr-wA-RLe"/>
+        <segue reference="nDo-ha-rZs"/>
     </inferredMetricsTieBreakers>
 </document>
