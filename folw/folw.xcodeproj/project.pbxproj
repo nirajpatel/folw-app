@@ -43,6 +43,7 @@
 		D87C93F819F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
 		D87C940019F071D000208B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87C93FE19F071D000208B35 /* InfoPlist.strings */; };
 		D87C940219F071D000208B35 /* folwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87C940119F071D000208B35 /* folwTests.m */; };
+		D88709251A2851660078FC14 /* backgroundBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = D88709241A2851660078FC14 /* backgroundBlurred.png */; };
 		D8BF369C1A156475003CB149 /* createTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF369B1A156475003CB149 /* createTripViewController.m */; };
 		D8C92BC819F718EF00D54E98 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D8C92BC719F718EF00D54E98 /* cancel.png */; };
 		D8DFB9E81A27FDB600ED461E /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB9E71A27FDB600ED461E /* LocationTracker.m */; };
@@ -108,6 +109,7 @@
 		D87C93FD19F071D000208B35 /* folwTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "folwTests-Info.plist"; sourceTree = "<group>"; };
 		D87C93FF19F071D000208B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87C940119F071D000208B35 /* folwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = folwTests.m; sourceTree = "<group>"; };
+		D88709241A2851660078FC14 /* backgroundBlurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundBlurred.png; path = images/backgroundBlurred.png; sourceTree = "<group>"; };
 		D8BF369A1A156475003CB149 /* createTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = createTripViewController.h; sourceTree = "<group>"; };
 		D8BF369B1A156475003CB149 /* createTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = createTripViewController.m; sourceTree = "<group>"; };
 		D8C92BC719F718EF00D54E98 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = images/cancel.png; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				D8C92BC719F718EF00D54E98 /* cancel.png */,
 				D8429A6019F717CC00DF9113 /* background.png */,
+				D88709241A2851660078FC14 /* backgroundBlurred.png */,
 				D8429A6219F717CC00DF9113 /* left.png */,
 				D8429A6319F717CC00DF9113 /* load-1x.png */,
 				D8347C5D1A16B04B001EB8A1 /* car.png */,
@@ -365,6 +368,7 @@
 				D8429A6A19F717CC00DF9113 /* load-1x.png in Resources */,
 				D8429A6C19F717CC00DF9113 /* main.png in Resources */,
 				D8C92BC819F718EF00D54E98 /* cancel.png in Resources */,
+				D88709251A2851660078FC14 /* backgroundBlurred.png in Resources */,
 				D8429A6719F717CC00DF9113 /* background.png in Resources */,
 				D8429A6919F717CC00DF9113 /* left.png in Resources */,
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
