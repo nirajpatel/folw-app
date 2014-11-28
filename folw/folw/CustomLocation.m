@@ -9,7 +9,7 @@
 
 @implementation CustomLocation
 
-- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate {
+- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number {
     if ((self = [super init])) {
         if ([name isKindOfClass:[NSString class]]) {
             _name = name;
@@ -18,6 +18,7 @@
         }
         _distance = distance;
         _theCoordinate = coordinate;
+        _isMainUser = number;
     }
     return self;
 }

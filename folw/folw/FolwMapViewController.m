@@ -69,7 +69,7 @@
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = point.latitude;
             coordinate.longitude = point.longitude;
-            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate] ;
+            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]] ;
             [_mapView addAnnotation:annotation];
         }];
         
@@ -104,12 +104,12 @@
                     
                     //get distance from main user to this user
                     CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
-                    NSString *distanceString = [NSString stringWithFormat:@"%.1fmi %@",(distance/1609.344), @"miles"];
+                    NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
                     
                     CLLocationCoordinate2D coordinate;
                     coordinate.latitude = point.latitude;
                     coordinate.longitude = point.longitude;
-                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate] ;
+                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0]] ;
                     [_mapView addAnnotation:annotation];
                 }];
             }
@@ -177,7 +177,7 @@
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = point.latitude;
             coordinate.longitude = point.longitude;
-            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate] ;
+            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]];
             [_mapView addAnnotation:annotation];
         }];
         
@@ -207,12 +207,12 @@
                     
                     //get distance from main user to this user
                     CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
-                    NSString *distanceString = [NSString stringWithFormat:@"%.1fmi %@",(distance/1609.344), @"miles"];
+                    NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
                     
                     CLLocationCoordinate2D coordinate;
                     coordinate.latitude = point.latitude;
                     coordinate.longitude = point.longitude;
-                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate] ;
+                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0]] ;
                     [_mapView addAnnotation:annotation];
                 }];
             }
@@ -253,7 +253,7 @@
     }
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(CustomLocation *)annotation {
     static NSString *identifier = @"CustomLocation";
     if ([annotation isKindOfClass:[CustomLocation class]]) {
         
@@ -262,7 +262,13 @@
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"car.png"];
+            
+            //main user
+            if([annotation.isMainUser isEqualToNumber:[NSNumber numberWithInt:1]]) {
+                annotationView.image = [UIImage imageNamed:@"mainCar.png"];
+            } else {
+                annotationView.image = [UIImage imageNamed:@"car.png"];
+            }
         } else {
             annotationView.annotation = annotation;
         }
