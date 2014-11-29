@@ -135,10 +135,41 @@
         
     }];
     
+    //destination
+    PFQuery *userQuery = [PFQuery queryWithClassName:@"Trip"];
+    [userQuery whereKey:@"objectId" equalTo:self.tripId];
+    
+    [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        PFGeoPoint *point = object[@"destination"];
+        
+        NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
+        NSLog(@"%@", latNumber);
+        NSString *latitudeString = [latNumber stringValue];
+        NSAssert(latitudeString, @"No latitude");
+        NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
+        NSLog(@"%@", longNumber);
+        
+        NSString *longitudeString = [longNumber stringValue];
+        NSAssert(longitudeString, @"No longitude");
+        
+        //get this users location
+        CLLocation *thisUserLocation = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+        
+        //get distance from main user to this user
+        CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
+        NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
+        
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = point.latitude;
+        coordinate.longitude = point.longitude;
+        CustomLocation *annotation = [[CustomLocation alloc] initWithName:@"Destination" distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:2]];
+        [_mapView addAnnotation:annotation];
+    }];
+    
     _endTrip.target = self;
     _endTrip.action = @selector( endTrip: );
     
-    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 4.0 target:self selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
 }
 
 -(void) callAfterSixtySecond:(NSTimer*) t
@@ -218,6 +249,37 @@
             }
         }
     }];
+    
+    //destination
+    PFQuery *userQuery = [PFQuery queryWithClassName:@"Trip"];
+    [userQuery whereKey:@"objectId" equalTo:self.tripId];
+    
+    [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        PFGeoPoint *point = object[@"destination"];
+        
+        NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
+        NSLog(@"%@", latNumber);
+        NSString *latitudeString = [latNumber stringValue];
+        NSAssert(latitudeString, @"No latitude");
+        NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
+        NSLog(@"%@", longNumber);
+        
+        NSString *longitudeString = [longNumber stringValue];
+        NSAssert(longitudeString, @"No longitude");
+        
+        //get this users location
+        CLLocation *thisUserLocation = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+        
+        //get distance from main user to this user
+        CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
+        NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
+        
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = point.latitude;
+        coordinate.longitude = point.longitude;
+        CustomLocation *annotation = [[CustomLocation alloc] initWithName:@"Destination" distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:2]];
+        [_mapView addAnnotation:annotation];
+    }];
 }
 
 -(void) endTrip:(id)sender {
@@ -266,6 +328,8 @@
             //main user
             if([annotation.isMainUser isEqualToNumber:[NSNumber numberWithInt:1]]) {
                 annotationView.image = [UIImage imageNamed:@"mainCar.png"];
+            } else if([annotation.isMainUser isEqualToNumber:[NSNumber numberWithInt:2]]) {
+                annotationView.image = [UIImage imageNamed:@"flag.png"];
             } else {
                 annotationView.image = [UIImage imageNamed:@"car.png"];
             }

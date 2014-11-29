@@ -50,6 +50,7 @@
 -(void)dismissKeyboard {
     [_tripName resignFirstResponder];
     [_userToAdd resignFirstResponder];
+    [_destination resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
