@@ -81,12 +81,36 @@
 - (void)makeTrip {
     
     if ([self.tripName hasText]) {
+        
+        
         // Save trip
         PFObject *trip = [PFObject objectWithClassName:@"Trip"];
         trip[@"name"] = self.tripName.text;
         trip[@"users"] = self.userList;
         trip[@"expired"] = @NO;
         [trip save];
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        // Example destination: @"6138 Bollinger Road, San Jose, United States"
+        [geocoder geocodeAddressString:self.destination.text completionHandler:^(NSArray* placemarks, NSError* error){
+            for (CLPlacemark* aPlacemark in placemarks)
+            {
+                // Process the placemark.
+                self.latDest = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
+                self.lonDest = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
+                
+                if (self.latDest != (id)[NSNull null] && self.lonDest != (id)[NSNull null]) {
+                    // lat and lon are not null
+                    double latdouble = [self.latDest doubleValue];
+                    double londouble = [self.lonDest doubleValue];
+                    
+                    PFGeoPoint *dest = [PFGeoPoint geoPointWithLatitude:latdouble longitude:londouble];
+                    trip[@"destination"] = dest;
+                    [trip save];
+                }
+                
+            }
+        }];
         
         self.tripId = [trip objectId];
         

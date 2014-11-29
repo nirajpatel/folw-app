@@ -21,6 +21,12 @@
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *tripId;
 
+@property (weak, nonatomic) IBOutlet UITextField *destination;
+
+@property (nonatomic, strong) NSString *latDest;
+@property (nonatomic, strong) NSString *lonDest;
+
+
 - (void)addUsers;
 
 @end
