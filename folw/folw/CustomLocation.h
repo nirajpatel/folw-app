@@ -13,8 +13,9 @@
 @interface CustomLocation : NSObject <MKAnnotation>
 
 @property (nonatomic) NSNumber * isMainUser;
+@property (strong, nonatomic) NSString * userId;
 
-- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number;
+- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number userid:(NSString*)userid;
 - (MKMapItem*)mapItem;
 
 @end

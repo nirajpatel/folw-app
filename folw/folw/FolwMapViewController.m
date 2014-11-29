@@ -36,7 +36,7 @@
     self.navigationItem.hidesBackButton = YES;
     
     self.users = [[NSArray alloc] init];
-    self.annotations = [NSMutableArray array];
+    self.annotations = [[NSMutableArray alloc] init];
     
     PFGeoPoint *leaderPoint;
     
@@ -70,9 +70,10 @@
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = point.latitude;
             coordinate.longitude = point.longitude;
-            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]];
+            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1] userid:self.userId];
             
             [self.annotations addObject:annotation];
+            
             
             [_mapView addAnnotation:annotation];
         }];
@@ -113,7 +114,7 @@
                     CLLocationCoordinate2D coordinate;
                     coordinate.latitude = point.latitude;
                     coordinate.longitude = point.longitude;
-                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0]] ;
+                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0] userid:self.users[i]];
                     
                     [self.annotations addObject:annotation];
                     
@@ -169,7 +170,7 @@
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = point.latitude;
         coordinate.longitude = point.longitude;
-        CustomLocation *annotation = [[CustomLocation alloc] initWithName:@"Destination" distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:2]];
+        CustomLocation *annotation = [[CustomLocation alloc] initWithName:@"Destination" distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:2] userid:@"-1"];
         [_mapView addAnnotation:annotation];
     }];
     
@@ -181,27 +182,13 @@
 
 -(void) callAfterSixtySecond:(NSTimer*) t
 {
-    for(CustomLocation *annotation in [_mapView annotations]) {
-        if(![@"Destination" isEqualToString:[annotation title]]) {
-            [_mapView removeAnnotation:annotation];
-        }
-    }
-    
-    PFGeoPoint *leaderPoint;
-    
-    PFQuery *tripQuery = [PFQuery queryWithClassName:@"Trip"];
-    [tripQuery whereKey:@"objectId" equalTo:_tripId];
-    [tripQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        self.users = [object objectForKey:@"users"];
-        
-        //leader
+    //get location for all other users
+    for(int i = 0; i < [self.users count]; i++) {
         PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
-        [userQuery whereKey:@"objectId" equalTo:self.userId];
+        [userQuery whereKey:@"objectId" equalTo:self.users[i]];
         
         [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             PFGeoPoint *point = object[@"currentLocation"];
-            
-            NSString *name = object[@"fullName"];
             
             NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
             NSLog(@"%@", latNumber);
@@ -213,53 +200,19 @@
             NSString *longitudeString = [longNumber stringValue];
             NSAssert(longitudeString, @"No longitude");
             
-            //store user location
-            _userLocation = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
-            
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = point.latitude;
             coordinate.longitude = point.longitude;
-            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]];
-            [_mapView addAnnotation:annotation];
-        }];
-        
-        //get location for all other users
-        for(int i = 0; i < sizeof(self.users); i++) {
-            if(self.users[i] != self.userId) {
-                PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
-                [userQuery whereKey:@"objectId" equalTo:self.users[i]];
-                
-                [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-                    PFGeoPoint *point = object[@"currentLocation"];
-                    
-                    NSString *name = object[@"fullName"];
-                    
-                    NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
-                    NSLog(@"%@", latNumber);
-                    NSString *latitudeString = [latNumber stringValue];
-                    NSAssert(latitudeString, @"No latitude");
-                    NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
-                    NSLog(@"%@", longNumber);
-                    
-                    NSString *longitudeString = [longNumber stringValue];
-                    NSAssert(longitudeString, @"No longitude");
-                    
-                    //get this users location
-                    CLLocation *thisUserLocation = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
-                    
-                    //get distance from main user to this user
-                    CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
-                    NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
-                    
-                    CLLocationCoordinate2D coordinate;
-                    coordinate.latitude = point.latitude;
-                    coordinate.longitude = point.longitude;
-                    CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0]] ;
-                    [_mapView addAnnotation:annotation];
-                }];
+            
+            for(CustomLocation *annotation in [_mapView annotations]) {
+                if([self.users[i] isEqualToString:[annotation userId]]) {
+                    NSLog(@"userid: %@", self.users[i]);
+                    NSLog(@"annotation userid: %@", [annotation userId]);
+                    [annotation setCoordinate:coordinate];
+                }
             }
-        }
-    }];
+        }];
+    }
 }
 
 -(void) endTrip:(id)sender {

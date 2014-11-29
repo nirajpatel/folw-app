@@ -4,12 +4,12 @@
 @interface CustomLocation ()
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *distance;
-@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @end
 
 @implementation CustomLocation
 
-- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number {
+- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number userid:(NSString*)userid {
     if ((self = [super init])) {
         if ([name isKindOfClass:[NSString class]]) {
             _name = name;
@@ -17,8 +17,9 @@
             _name = @"Unknown charge";
         }
         _distance = distance;
-        _theCoordinate = coordinate;
+        _coordinate = coordinate;
         _isMainUser = number;
+        _userId = userid;
     }
     return self;
 }
@@ -32,7 +33,7 @@
 }
 
 - (CLLocationCoordinate2D)coordinate {
-    return _theCoordinate;
+    return _coordinate;
 }
 
 - (MKMapItem*)mapItem {
