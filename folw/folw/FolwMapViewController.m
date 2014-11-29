@@ -36,6 +36,7 @@
     self.navigationItem.hidesBackButton = YES;
     
     self.users = [[NSArray alloc] init];
+    self.annotations = [NSMutableArray array];
     
     PFGeoPoint *leaderPoint;
     
@@ -69,7 +70,10 @@
             CLLocationCoordinate2D coordinate;
             coordinate.latitude = point.latitude;
             coordinate.longitude = point.longitude;
-            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]] ;
+            CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:@"" coordinate:coordinate mainuser:[NSNumber numberWithInt:1]];
+            
+            [self.annotations addObject:annotation];
+            
             [_mapView addAnnotation:annotation];
         }];
         
@@ -110,6 +114,9 @@
                     coordinate.latitude = point.latitude;
                     coordinate.longitude = point.longitude;
                     CustomLocation *annotation = [[CustomLocation alloc] initWithName:name distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:0]] ;
+                    
+                    [self.annotations addObject:annotation];
+                    
                     [_mapView addAnnotation:annotation];
                 }];
             }
@@ -169,12 +176,16 @@
     _endTrip.target = self;
     _endTrip.action = @selector( endTrip: );
     
-    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 4.0 target:self selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector: @selector(callAfterSixtySecond:) userInfo: nil repeats: YES];
 }
 
 -(void) callAfterSixtySecond:(NSTimer*) t
 {
-    [_mapView removeAnnotations:_mapView.annotations];
+    for(CustomLocation *annotation in [_mapView annotations]) {
+        if(![@"Destination" isEqualToString:[annotation title]]) {
+            [_mapView removeAnnotation:annotation];
+        }
+    }
     
     PFGeoPoint *leaderPoint;
     
@@ -248,37 +259,6 @@
                 }];
             }
         }
-    }];
-    
-    //destination
-    PFQuery *userQuery = [PFQuery queryWithClassName:@"Trip"];
-    [userQuery whereKey:@"objectId" equalTo:self.tripId];
-    
-    [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        PFGeoPoint *point = object[@"destination"];
-        
-        NSNumber *latNumber = [NSNumber numberWithDouble:point.latitude];
-        NSLog(@"%@", latNumber);
-        NSString *latitudeString = [latNumber stringValue];
-        NSAssert(latitudeString, @"No latitude");
-        NSNumber *longNumber = [NSNumber numberWithDouble:point.longitude];
-        NSLog(@"%@", longNumber);
-        
-        NSString *longitudeString = [longNumber stringValue];
-        NSAssert(longitudeString, @"No longitude");
-        
-        //get this users location
-        CLLocation *thisUserLocation = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
-        
-        //get distance from main user to this user
-        CLLocationDistance distance = [_userLocation distanceFromLocation:thisUserLocation];
-        NSString *distanceString = [NSString stringWithFormat:@"%.1f %@",(distance/1609.344), @"mi."];
-        
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = point.latitude;
-        coordinate.longitude = point.longitude;
-        CustomLocation *annotation = [[CustomLocation alloc] initWithName:@"Destination" distance:distanceString coordinate:coordinate mainuser:[NSNumber numberWithInt:2]];
-        [_mapView addAnnotation:annotation];
     }];
 }
 
