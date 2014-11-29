@@ -45,11 +45,17 @@
                              range:NSMakeRange(0, 8)];
     _userNameField.attributedText = usernameAttributedString;
     
+    [_userNameField setLeftViewMode:UITextFieldViewModeAlways];
+    _userNameField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"username.png"]];
+    
     NSMutableAttributedString *passwordAttributedString = [[NSMutableAttributedString alloc] initWithString:@"PASSWORD"];
     [passwordAttributedString addAttribute:NSKernAttributeName
                                      value:@(2.2)
                                      range:NSMakeRange(0, 8)];
     _passwordField.attributedText = passwordAttributedString;
+    
+    [_passwordField setLeftViewMode:UITextFieldViewModeAlways];
+    _passwordField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"password.png"]];
     
     NSMutableAttributedString *labelAttributedString = [[NSMutableAttributedString alloc] initWithString:@"SIGN IN"];
     [labelAttributedString addAttribute:NSKernAttributeName

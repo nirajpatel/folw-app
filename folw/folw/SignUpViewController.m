@@ -42,11 +42,17 @@
                                      range:NSMakeRange(0, 8)];
     _fullNameField.attributedText = fullNameAttributedString;
     
+    [_fullNameField setLeftViewMode:UITextFieldViewModeAlways];
+    _fullNameField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"name.png"]];
+    
     NSMutableAttributedString *usernameAttributedString = [[NSMutableAttributedString alloc] initWithString:@"USERNAME"];
     [usernameAttributedString addAttribute:NSKernAttributeName
                                      value:@(2.2)
                                      range:NSMakeRange(0, 8)];
     _usernameField.attributedText = usernameAttributedString;
+    
+    [_usernameField setLeftViewMode:UITextFieldViewModeAlways];
+    _usernameField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"username.png"]];
     
     NSMutableAttributedString *emailAttributedString = [[NSMutableAttributedString alloc] initWithString:@"EMAIL"];
     [emailAttributedString addAttribute:NSKernAttributeName
@@ -54,11 +60,17 @@
                                      range:NSMakeRange(0, 4)];
     _emailField.attributedText = emailAttributedString;
     
+    [_emailField setLeftViewMode:UITextFieldViewModeAlways];
+    _emailField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"email.png"]];
+    
     NSMutableAttributedString *passwordAttributedString = [[NSMutableAttributedString alloc] initWithString:@"PASSWORD"];
     [passwordAttributedString addAttribute:NSKernAttributeName
                                   value:@(2.2)
                                   range:NSMakeRange(0, 7)];
     _passwordField.attributedText = passwordAttributedString;
+    
+    [_passwordField setLeftViewMode:UITextFieldViewModeAlways];
+    _passwordField.leftView= [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"password.png"]];
     
     NSMutableAttributedString *labelAttributedString = [[NSMutableAttributedString alloc] initWithString:@"SIGN UP"];
     [labelAttributedString addAttribute:NSKernAttributeName

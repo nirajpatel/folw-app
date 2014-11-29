@@ -29,6 +29,10 @@
 		D8429A6C19F717CC00DF9113 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6519F717CC00DF9113 /* main.png */; };
 		D8429A6D19F717CC00DF9113 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6619F717CC00DF9113 /* menu.png */; };
 		D85F622A19F584380042322A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F622919F584380042322A /* StartViewController.m */; };
+		D877168F1A2A63FF00553C56 /* username.png in Resources */ = {isa = PBXBuildFile; fileRef = D877168E1A2A63FF00553C56 /* username.png */; };
+		D87716911A2A65D300553C56 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = D87716901A2A65D300553C56 /* password.png */; };
+		D87716931A2A6A5C00553C56 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = D87716921A2A6A5C00553C56 /* name.png */; };
+		D87716951A2A6C9300553C56 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = D87716941A2A6C9300553C56 /* email.png */; };
 		D87C93D719F071D000208B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D619F071D000208B35 /* Foundation.framework */; };
 		D87C93D919F071D000208B35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93D819F071D000208B35 /* CoreGraphics.framework */; };
 		D87C93DB19F071D000208B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87C93DA19F071D000208B35 /* UIKit.framework */; };
@@ -92,6 +96,10 @@
 		D8429A6619F717CC00DF9113 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/menu.png; sourceTree = "<group>"; };
 		D85F622819F584380042322A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		D85F622919F584380042322A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		D877168E1A2A63FF00553C56 /* username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = username.png; path = images/username.png; sourceTree = "<group>"; };
+		D87716901A2A65D300553C56 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password.png; path = images/password.png; sourceTree = "<group>"; };
+		D87716921A2A6A5C00553C56 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name.png; path = images/name.png; sourceTree = "<group>"; };
+		D87716941A2A6C9300553C56 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = images/email.png; sourceTree = "<group>"; };
 		D87C93D319F071D000208B35 /* folw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = folw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87C93D619F071D000208B35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D87C93D819F071D000208B35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -278,6 +286,10 @@
 				D8429A6319F717CC00DF9113 /* load-1x.png */,
 				D8347C5D1A16B04B001EB8A1 /* car.png */,
 				D87EBCF51A29021100516966 /* mainCar.png */,
+				D877168E1A2A63FF00553C56 /* username.png */,
+				D87716921A2A6A5C00553C56 /* name.png */,
+				D87716901A2A65D300553C56 /* password.png */,
+				D87716941A2A6C9300553C56 /* email.png */,
 				D88B9A4D1A29898F007A58BD /* flag.png */,
 				D8429A6419F717CC00DF9113 /* load-2x.png */,
 				D8429A6519F717CC00DF9113 /* main.png */,
@@ -370,8 +382,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D877168F1A2A63FF00553C56 /* username.png in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
+				D87716911A2A65D300553C56 /* password.png in Resources */,
 				D8429A6A19F717CC00DF9113 /* load-1x.png in Resources */,
+				D87716931A2A6A5C00553C56 /* name.png in Resources */,
 				D8429A6C19F717CC00DF9113 /* main.png in Resources */,
 				D88B9A4E1A29898F007A58BD /* flag.png in Resources */,
 				D8C92BC819F718EF00D54E98 /* cancel.png in Resources */,
@@ -381,6 +396,7 @@
 				D87C93E119F071D000208B35 /* InfoPlist.strings in Resources */,
 				D8429A6D19F717CC00DF9113 /* menu.png in Resources */,
 				D8347C5E1A16B04B001EB8A1 /* car.png in Resources */,
+				D87716951A2A6C9300553C56 /* email.png in Resources */,
 				D8429A6B19F717CC00DF9113 /* load-2x.png in Resources */,
 				D87C93EA19F071D000208B35 /* Main.storyboard in Resources */,
 				D87EBCF61A29021100516966 /* mainCar.png in Resources */,
