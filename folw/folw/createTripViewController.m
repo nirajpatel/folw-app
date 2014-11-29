@@ -92,6 +92,7 @@
         
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         // Example destination: @"6138 Bollinger Road, San Jose, United States"
+        // Can't check for invalid or bogus input because function always returns a geopoint regardless of what you give it
         [geocoder geocodeAddressString:self.destination.text completionHandler:^(NSArray* placemarks, NSError* error){
             for (CLPlacemark* aPlacemark in placemarks)
             {
@@ -104,6 +105,7 @@
                     double latdouble = [self.latDest doubleValue];
                     double londouble = [self.lonDest doubleValue];
                     
+                    // Put geopoint in parse
                     PFGeoPoint *dest = [PFGeoPoint geoPointWithLatitude:latdouble longitude:londouble];
                     trip[@"destination"] = dest;
                     [trip save];
