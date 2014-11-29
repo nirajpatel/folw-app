@@ -12,7 +12,9 @@
 
 @interface CustomLocation : NSObject <MKAnnotation>
 
-- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate;
+@property (nonatomic) NSNumber * isMainUser;
+
+- (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number;
 - (MKMapItem*)mapItem;
 
 @end
