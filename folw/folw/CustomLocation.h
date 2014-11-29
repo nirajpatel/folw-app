@@ -17,5 +17,6 @@
 
 - (id)initWithName:(NSString*)name distance:(NSString*)distance coordinate:(CLLocationCoordinate2D)coordinate mainuser:(NSNumber*)number userid:(NSString*)userid;
 - (MKMapItem*)mapItem;
+- (void) setDistance:(NSString*)distance;
 
 @end

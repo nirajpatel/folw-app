@@ -18,8 +18,6 @@
 @property (strong, nonatomic) NSString *userId;
 @property (strong, nonatomic) NSString *tripId;
 
-@property (strong, nonatomic) NSMutableArray *annotations;
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *endTrip;
 
 @end

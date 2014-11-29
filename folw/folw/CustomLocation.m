@@ -32,6 +32,10 @@
     return _distance;
 }
 
+- (void) setDistance:(NSString*)distance {
+    _distance = distance;
+}
+
 - (CLLocationCoordinate2D)coordinate {
     return _coordinate;
 }
