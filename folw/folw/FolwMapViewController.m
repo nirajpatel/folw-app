@@ -34,6 +34,7 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     self.navigationItem.hidesBackButton = YES;
     
     self.users = [[NSArray alloc] init];

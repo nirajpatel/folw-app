@@ -187,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1556" y="14"/>
         </scene>
-        <!--Folw Map View Controller-->
+        <!--Folw Map View Controller - Folw-->
         <scene sceneID="0Kd-84-hKY">
             <objects>
                 <viewController id="eLf-R5-WEu" customClass="FolwMapViewController" sceneMemberID="viewController">
@@ -200,32 +200,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iME-WC-aC9">
-                                <rect key="frame" x="0.0" y="0.0" width="325" height="568"/>
+                                <rect key="frame" x="0.0" y="61" width="325" height="507"/>
                                 <connections>
                                     <outlet property="delegate" destination="eLf-R5-WEu" id="kVf-cD-0cg"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPK-nY-VH2">
-                                <rect key="frame" x="201" y="486" width="103" height="30"/>
-                                <state key="normal" title="Current People">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nrR-nk-y0l" kind="push" identifier="currentPeopleSegue" id="UaQ-0Z-Mej"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="End Trip" id="QRV-FU-Nd3">
-                            <color key="tintColor" red="0.18823531269999999" green="0.18823531269999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Folw" id="lqL-8R-xut">
+                        <barButtonItem key="leftBarButtonItem" title="End Trip" id="QRV-FU-Nd3">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="Lhx-1s-I0E">
-                        <connections>
-                            <outlet property="leftBarButtonItem" destination="QRV-FU-Nd3" id="qvG-rh-zfW"/>
-                        </connections>
+                        <barButtonItem key="rightBarButtonItem" image="menu-25.png" id="d5d-xu-ESR">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="nrR-nk-y0l" kind="push" identifier="currentPeopleSegue" id="EAZ-wU-DmL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -405,12 +398,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLM-yr-gW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="QDP-Mu-ZcK">
+            <objects>
+                <viewController id="Fby-su-dak" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ScC-Fu-cwf"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Mo-Tc-TUT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oCg-7z-wGm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCd-2k-SSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="backgroundBlurred.png" width="640" height="1136"/>
         <image name="cancel.png" width="16" height="16"/>
         <image name="left.png" width="9" height="16"/>
         <image name="main.png" width="640" height="1136"/>
+        <image name="menu-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -419,9 +430,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="bsT-nh-Vfs"/>
-        <segue reference="UaQ-0Z-Mej"/>
-        <segue reference="6lr-wA-RLe"/>
+        <segue reference="WK2-Js-6x3"/>
         <segue reference="hBv-XV-8Dh"/>
+        <segue reference="EAZ-wU-DmL"/>
         <segue reference="nDo-ha-rZs"/>
     </inferredMetricsTieBreakers>
 </document>
