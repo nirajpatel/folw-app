@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iME-WC-aC9">
-                                <rect key="frame" x="0.0" y="61" width="325" height="507"/>
+                                <rect key="frame" x="0.0" y="64" width="325" height="504"/>
                                 <connections>
                                     <outlet property="delegate" destination="eLf-R5-WEu" id="kVf-cD-0cg"/>
                                 </connections>
@@ -429,10 +429,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bsT-nh-Vfs"/>
-        <segue reference="WK2-Js-6x3"/>
+        <segue reference="6lr-wA-RLe"/>
         <segue reference="hBv-XV-8Dh"/>
-        <segue reference="EAZ-wU-DmL"/>
         <segue reference="nDo-ha-rZs"/>
+        <segue reference="EAZ-wU-DmL"/>
+        <segue reference="bsT-nh-Vfs"/>
     </inferredMetricsTieBreakers>
 </document>
