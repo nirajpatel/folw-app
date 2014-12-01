@@ -69,7 +69,9 @@
             // The find succeeded.
             // Should only be one object (one user)
             if (![self.userList containsObject:object.objectId]) {
+                self.message.text = @"";
                 [self.userList addObject:object.objectId];
+                _userToAdd.text = @"";
             }
         } else {
             // Show details on the message label

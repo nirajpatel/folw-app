@@ -72,7 +72,7 @@
 //    if(IS_OS_8_OR_LATER) {
 //        [locationManager requestAlwaysAuthorization];
 //    }
-    [locationManager startUpdatingLocation];
+    //[locationManager startUpdatingLocation];
 }
 
 
