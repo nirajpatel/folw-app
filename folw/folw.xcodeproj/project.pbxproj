@@ -29,6 +29,7 @@
 		D8429A6C19F717CC00DF9113 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6519F717CC00DF9113 /* main.png */; };
 		D8429A6D19F717CC00DF9113 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D8429A6619F717CC00DF9113 /* menu.png */; };
 		D85F622A19F584380042322A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F622919F584380042322A /* StartViewController.m */; };
+		D8723ED21A2D162F000B9B08 /* waypoints (1).gpx in Resources */ = {isa = PBXBuildFile; fileRef = D8723ED11A2D162F000B9B08 /* waypoints (1).gpx */; };
 		D877168F1A2A63FF00553C56 /* username.png in Resources */ = {isa = PBXBuildFile; fileRef = D877168E1A2A63FF00553C56 /* username.png */; };
 		D87716911A2A65D300553C56 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = D87716901A2A65D300553C56 /* password.png */; };
 		D87716931A2A6A5C00553C56 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = D87716921A2A6A5C00553C56 /* name.png */; };
@@ -98,6 +99,7 @@
 		D8429A6619F717CC00DF9113 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/menu.png; sourceTree = "<group>"; };
 		D85F622819F584380042322A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		D85F622919F584380042322A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		D8723ED11A2D162F000B9B08 /* waypoints (1).gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "waypoints (1).gpx"; sourceTree = "<group>"; };
 		D877168E1A2A63FF00553C56 /* username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = username.png; path = images/username.png; sourceTree = "<group>"; };
 		D87716901A2A65D300553C56 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password.png; path = images/password.png; sourceTree = "<group>"; };
 		D87716921A2A6A5C00553C56 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name.png; path = images/name.png; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		D87C93CA19F071D000208B35 = {
 			isa = PBXGroup;
 			children = (
+				D8723ED11A2D162F000B9B08 /* waypoints (1).gpx */,
 				BB5FC36419F4417D00329EDA /* Bolts.framework */,
 				BB5FC36519F4417D00329EDA /* Parse.framework */,
 				D87C940B19F0731F00208B35 /* images */,
@@ -392,6 +395,7 @@
 			files = (
 				D877168F1A2A63FF00553C56 /* username.png in Resources */,
 				D87C93EF19F071D000208B35 /* Images.xcassets in Resources */,
+				D8723ED21A2D162F000B9B08 /* waypoints (1).gpx in Resources */,
 				D87716911A2A65D300553C56 /* password.png in Resources */,
 				D8429A6A19F717CC00DF9113 /* load-1x.png in Resources */,
 				D87716931A2A6A5C00553C56 /* name.png in Resources */,
