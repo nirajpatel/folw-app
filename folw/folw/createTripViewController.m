@@ -79,6 +79,8 @@
     
 }
 
+
+
 - (void)makeTrip {
     
     if ([self.tripName hasText]) {
@@ -147,6 +149,8 @@
     if ([segue.identifier isEqualToString:@"loadMain"]) {
         [segue.destinationViewController setTripId:self.tripId];
         [segue.destinationViewController setUserId:self.userId];
+    } else if ([segue.identifier isEqualToString:@"currentPeopleSegue"]){
+        [segue.destinationViewController setUserList:self.userList];
     }
 }
 

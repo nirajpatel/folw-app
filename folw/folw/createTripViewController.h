@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *addUser;
 @property (weak, nonatomic) IBOutlet UIButton *createTrip;
+@property (weak, nonatomic) IBOutlet UIButton *currentPeople;
 
 @property (nonatomic, strong) NSMutableArray *userList;
 @property (weak, nonatomic) IBOutlet UILabel *message;

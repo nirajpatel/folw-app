@@ -298,6 +298,8 @@
 {
     if ([segue.identifier isEqualToString:@"newTrip"]) {
         [segue.destinationViewController setUserId:self.userId];
+    } else if ([segue.identifier isEqualToString:@"currentPeopleSegue"]){
+        [segue.destinationViewController setUserList:[self.users mutableCopy]];
     }
 }
 
