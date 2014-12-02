@@ -122,14 +122,18 @@
         self.tripId = [trip objectId];
         
         // Take trip id and add to each user
-        for (NSString *userId in self.userList) {
-            PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-            [query getObjectInBackgroundWithId:userId block:^(PFObject *user, NSError *error) {
-                // Do something with the returned PFObject in the gameScore variable.
+        
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"objectId" containedIn:self.userList];
+        
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for(PFObject *user in objects) {
                 user[@"currentTrip"] = trip.objectId;
-                [user save];
-            }];
-        }
+            }
+            [PFObject saveAll:objects];
+        }];
         
         // Take them to map view
         [self performSegueWithIdentifier:@"loadMain" sender:self];
